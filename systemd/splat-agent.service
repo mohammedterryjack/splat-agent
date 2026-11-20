@@ -1,0 +1,20 @@
+[Unit]
+Description=Splat agent service (Ink Studio engine, job socket, LAN viewer on the LAN address :8646 (8645 is the bridge speech server))
+After=network-online.target
+
+[Service]
+EnvironmentFile=%h/Code/splat-agent/.env
+Type=simple
+WorkingDirectory=%h/Code/splat-agent
+ExecStart=/usr/bin/node %h/Code/splat-agent/service.js
+Restart=on-failure
+RestartSec=5
+MemoryMax=600M
+MemorySwapMax=0
+CPUQuota=200%
+CPUWeight=20
+Nice=10
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=default.target

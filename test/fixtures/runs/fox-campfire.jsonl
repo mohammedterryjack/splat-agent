@@ -1,0 +1,271 @@
+{"step": 1, "tool": "catalog", "args": {"query": "kinds"}, "ok": true, "result": "ground: a round patch of ground (rad = radius, default 8). Put it first.\n  needs"}
+{"step": 2, "tool": "catalog", "args": {"query": "motion"}, "ok": true, "result": "add_motion do: spin {axis, speed}, bob {axis, amount, period, phase}, turn {axis"}
+{"step": 3, "tool": "set_style", "args": {"style": "ember"}, "ok": true, "result": "ok."}
+{"step": 4, "tool": "add_solid", "args": {"id": "ground", "kind": "ground", "mat": "earth", "params": {"rad": 8, "res": 0.18}}, "ok": true, "result": "ok: ground."}
+{"step": 5, "tool": "add_solid", "args": {"id": "fox-body", "kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.2, 0.42, 0.3], "r": [1.05, 0.62, 0.85]}}, "ok": true, "result": "ok: fox-body."}
+{"step": 6, "tool": "add_solid", "args": {"id": "fox-head", "kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.75, 0.95, 0.45], "r": 0.42, "res": 0.1}}, "ok": true, "result": "ok: fox-head."}
+{"step": 7, "tool": "add_solid", "args": {"id": "fox-snout", "kind": "ball", "mat": {"noise": 0.1, "role": "accent"}, "params": {"at": [-2.05, 0.68, 0.5], "r": [0.45, 0.26, 0.26]}}, "ok": true, "result": "ok: fox-snout."}
+{"step": 8, "tool": "add_solid", "args": {"id": "fox-muzzle", "kind": "ball", "mat": "bone", "params": {"at": [-1.6, 0.92, 0.5], "r": 0.16}}, "ok": true, "result": "ok: fox-muzzle."}
+{"step": 9, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [0, 0, 0], "pts": [[-0.35, 0.22, 0.2], [0.05, 0.08, -0.15], [0.45, 0.28, -0.35], [0.35, 0.55, 0.35], [-0.65, 0.42, 0.75], [-1.5, 0.55, 0.55]], "r": [0.14, 0.3]}}, "ok": false, "result": "refused (add_solid tube); the scene is unchanged. Fix and try again:\nERROR at so"}
+{"step": 10, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"pts": [[-0.35, 0.22, 0.2], [0.05, 0.08, -0.15], [0.45, 0.28, -0.35], [0.35, 0.55, 0.35], [-0.65, 0.42, 0.75], [-1.5, 0.55, 0.55]], "r": [0.14, 0.3]}}, "ok": true, "result": "ok: tube."}
+{"step": 11, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.72, 0.6, 0.55], "r": [0.3, 0.16, 0.24]}}, "ok": true, "result": "ok: ball."}
+{"step": 12, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.62, 1.32, 0.18], "r": 0.24, "shape": "d4"}}, "ok": true, "result": "ok: regular."}
+{"step": 13, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.55, 1.34, 0.72], "r": 0.24, "shape": "d4"}}, "ok": true, "result": "ok: regular-2."}
+{"step": 14, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.62, 1.28, 0.18], "r": 0.1}}, "ok": true, "result": "ok: ball-2."}
+{"step": 15, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.55, 1.3, 0.72], "r": 0.1}}, "ok": true, "result": "ok: ball-3."}
+{"step": 16, "tool": "add_solid", "args": {"kind": "tube", "mat": "wood", "params": {"id": "log-1", "pts": [[1.15, 0.1, -0.55], [1.85, 0.16, 0.65]], "r": 0.13}}, "ok": false, "result": "put \"id\" in its own argument, not in params"}
+{"step": 17, "tool": "add_solid", "args": {"id": "log-1", "kind": "tube", "mat": "wood", "params": {"pts": [[1.15, 0.1, -0.55], [1.85, 0.16, 0.65]], "r": 0.13}}, "ok": true, "result": "ok: log-1."}
+{"step": 18, "tool": "add_solid", "args": {"kind": "tube", "mat": "wood", "params": {"pts": [[1.05, 0.12, 0.7], [1.95, 0.18, -0.45]], "r": 0.13}}, "ok": true, "result": "ok: tube-2."}
+{"step": 19, "tool": "add_solid", "args": {"kind": "tube", "mat": "wood", "params": {"pts": [[1.5, 0.55, -0.6], [1.5, 0.1, 0.15]], "r": 0.11}}, "ok": true, "result": "ok: tube-3."}
+{"step": 20, "tool": "add_solid", "args": {"kind": "rock", "mat": "stone", "params": {"at": [0.95, 0.12, 0.1], "r": 0.22}}, "ok": true, "result": "ok: rock."}
+{"step": 21, "tool": "add_solid", "args": {"kind": "rock", "mat": "stone", "params": {"at": [1.25, 0.12, 0.85], "r": 0.2}}, "ok": true, "result": "ok: rock-2."}
+{"step": 22, "tool": "add_solid", "args": {"kind": "rock", "mat": "stone", "params": {"at": [1.95, 0.12, 0.6], "r": 0.21}}, "ok": true, "result": "ok: rock-3."}
+{"step": 23, "tool": "add_solid", "args": {"kind": "rock", "mat": "stone", "params": {"at": [2.1, 0.12, -0.35], "r": 0.2}}, "ok": true, "result": "ok: rock-4."}
+{"step": 24, "tool": "add_solid", "args": {"kind": "rock", "mat": "stone", "params": {"at": [1.6, 0.12, -0.85], "r": 0.22}}, "ok": true, "result": "ok: rock-5."}
+{"step": 25, "tool": "add_solid", "args": {"kind": "rock", "mat": "stone", "params": {"at": [0.98, 0.1, -0.28], "r": 0.18}}, "ok": true, "result": "ok: rock-6."}
+{"step": 26, "tool": "add_solid", "args": {"kind": "revolve", "mat": {"glow": true, "role": "ember"}, "params": {"at": [1.5, 0.15, 0.05], "id": "flame-a", "outline": {"svg": "M0 0 C0.28 0.1 0.32 0.45 0.14 0.72 C0.06 0.95 0 1.05 0 1.12 C-0.02 0.9 -0.12 0.7 -0.22 0.5 C-0.3 0.3 -0.22 0.08 0 0 Z"}}}, "ok": false, "result": "put \"id\" in its own argument, not in params"}
+{"step": 27, "tool": "add_solid", "args": {"kind": "revolve", "mat": {"glow": true, "role": "ember"}, "params": {"at": [1.5, 0.15, 0.05], "outline": {"svg": "M0 0 C0.28 0.1 0.32 0.45 0.14 0.72 C0.06 0.95 0 1.05 0 1.12 C-0.02 0.9 -0.12 0.7 -0.22 0.5 C-0.3 0.3 -0.22 0.08 0 0 Z"}}}, "ok": true, "result": "ok: revolve."}
+{"step": 28, "tool": "add_solid", "args": {"kind": "revolve", "mat": {"glow": true, "role": "glow"}, "params": {"at": [1.5, 0.15, 0.05], "outline": {"svg": "M0 0 C0.16 0.08 0.18 0.3 0.08 0.5 C0.03 0.65 0 0.72 0 0.78 C-0.01 0.62 -0.07 0.48 -0.13 0.34 C-0.17 0.2 -0.13 0.05 0 0 Z"}}}, "ok": true, "result": "ok: revolve-2."}
+{"step": 29, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9296 splats (limit 250000), extent [-6.47,-0.07,-6.59]..[6.94,1.73,6.4"}
+{"step": 30, "tool": "catalog", "args": {"query": "materials"}, "ok": true, "result": "roles: stone, dark, pale, earth, wood, moss, leaf, water, metal, bone, ember, gl"}
+{"step": 31, "tool": "set_style", "args": {"roles": {"accent": [17, 18, 19, 20]}, "style": "ember"}, "ok": true, "result": "ok."}
+{"step": 32, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9296 splats (limit 250000), extent [-6.47,-0.07,-6.59]..[6.94,1.73,6.4"}
+{"step": 33, "tool": "catalog", "args": {"query": "ember"}, "ok": true, "result": "\nAlso see catalog sections: materials, styles"}
+{"step": 34, "tool": "catalog", "args": {"query": "style"}, "ok": true, "result": "nothing matches \"style\". Sections: kinds, joins, wraps, materials, styles, motio"}
+{"step": 35, "tool": "catalog", "args": {"query": "styles"}, "ok": true, "result": "slate: 30 colours; roles stone=[1,2,3,4,5] dark=[1,1,2,3] pale=[3,4,5,6] earth=["}
+{"step": 36, "tool": "stats", "args": {}, "ok": true, "result": "9296 splats (limit 250000), extent [-6.47,-0.07,-6.59]..[6.94,1.73,6.41], camera"}
+{"step": 37, "tool": "validate", "args": {}, "ok": true, "result": "no problems\nstyle ember; camera {\"target\":[0,1,0],\"dist\":12,\"pitch\":0.25,\"yaw\":0"}
+{"step": 38, "tool": "add_solid", "args": {"kind": "ball", "mat": "palered", "params": {"at": [0, 5, 0], "r": 0.01}}, "ok": false, "result": "refused (add_solid ball-4); the scene is unchanged. Fix and try again:\nERROR at "}
+{"step": 39, "tool": "set_style", "args": {"palette": ["#0d0a08", "#1c1512", "#2b201a", "#3a2b22", "#4d3629", "#6b4a33", "#8a5f3d", "#5c2f1c", "#7a3b22", "#96491f", "#b35a1c", "#c96a1a", "#e07d15", "#f0932a", "#f8b03c", "#ffcf5c", "#ffe08a", "#fff3c4", "#ffd27f", "#c8783c", "#e8944a", "#5a4632"], "roles": {"accent": [19, 20, 18, 16], "bone": [16, 17, 17], "earth": [0, 1, 2, 3], "ember": [12, 13, 14, 15], "glow": [15, 16], "pale": [16, 17, 17], "stone": [4, 5, 6, 7], "wood": [4, 5, 7, 8]}}, "ok": true, "result": "ok."}
+{"step": 40, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9296 splats (limit 250000), extent [-6.47,-0.07,-6.59]..[6.94,1.73,6.4"}
+{"step": 41, "tool": "set_style", "args": {"palette": ["#0d0a08", "#1c1512", "#2b201a", "#3a2b22", "#4d3629", "#6b4a33", "#8a5f3d", "#8a3a1e", "#a8481f", "#c25a22", "#d96e26", "#e8862e", "#f2a03a", "#f8b957", "#ffd27f", "#ffe6ad", "#fff3c4", "#ffe0a0", "#c8783c", "#e8944a", "#5a4632", "#7a6248"], "roles": {"accent": [11, 10, 9, 8], "bone": [14, 15, 16], "earth": [0, 1, 2, 3], "ember": [12, 13, 14, 15], "glow": [15, 16], "pale": [15, 16, 16], "stone": [4, 5, 6, 20], "wood": [4, 5, 7, 9]}}, "ok": true, "result": "ok."}
+{"step": 42, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9296 splats (limit 250000), extent [-6.47,-0.07,-6.59]..[6.94,1.73,6.4"}
+{"step": 43, "tool": "render", "args": {"pitch": 0.6, "yaw": 2.6}, "ok": true, "result": "Rendered. 9296 splats (limit 250000), extent [-6.47,-0.07,-6.59]..[6.94,1.73,6.4"}
+{"step": 44, "tool": "remove_part", "args": {"id": "fox-body"}, "ok": true, "result": "ok."}
+{"step": 45, "tool": "remove_part", "args": {"id": "fox-head"}, "ok": true, "result": "ok."}
+{"step": 46, "tool": "remove_part", "args": {"id": "fox-snout"}, "ok": true, "result": "ok."}
+{"step": 47, "tool": "remove_part", "args": {"id": "fox-muzzle"}, "ok": true, "result": "ok."}
+{"step": 48, "tool": "remove_part", "args": {"id": "tube"}, "ok": true, "result": "ok."}
+{"step": 49, "tool": "remove_part", "args": {"id": "ball"}, "ok": true, "result": "ok."}
+{"step": 50, "tool": "remove_part", "args": {"id": "regular"}, "ok": true, "result": "ok."}
+{"step": 51, "tool": "remove_part", "args": {"id": "regular-2"}, "ok": true, "result": "ok."}
+{"step": 52, "tool": "remove_part", "args": {"id": "ball-2"}, "ok": true, "result": "ok."}
+{"step": 53, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 54, "tool": "add_solid", "args": {"kind": "torus", "mat": {"noise": 0.15, "role": "accent"}, "params": {"R": 1.05, "at": [0, 0, 0], "r": 0.58, "res": 0.1}}, "ok": true, "result": "ok: torus."}
+{"step": 55, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [0, 0, 0], "r": 0.62, "res": 0.1}}, "ok": true, "result": "ok: ball."}
+{"step": 56, "tool": "stats", "args": {}, "ok": true, "result": "7822 splats (limit 250000), extent [-6.47,-0.04,-6.59]..[6.94,1.15,6.41], camera"}
+{"step": 57, "tool": "remove_part", "args": {"id": "torus"}, "ok": true, "result": "ok."}
+{"step": 58, "tool": "remove_part", "args": {"id": "ball"}, "ok": true, "result": "ok."}
+{"step": 59, "tool": "add_solid", "args": {"kind": "torus", "mat": {"noise": 0.15, "role": "accent"}, "params": {"R": 0.85, "at": [-1.2, 0.5, 0.3], "r": 0.52, "res": 0.1, "turn": [0, 0.15, 0]}}, "ok": true, "result": "ok: torus."}
+{"step": 60, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9441 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.15,6.4"}
+{"step": 61, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"pts": [[-1.4, 0.35, -0.55], [-0.55, 0.22, -0.15], [-0.6, 0.32, 0.65], [-1.35, 0.55, 0.95], [-2.1, 0.62, 0.55]], "r": [0.14, 0.32]}}, "ok": true, "result": "ok: tube."}
+{"step": 62, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.1, 0.6, 0.55], "r": [0.3, 0.22, 0.26]}}, "ok": true, "result": "ok: ball."}
+{"step": 63, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.75, 0.68, -0.15], "r": [0.42, 0.4, 0.4]}}, "ok": true, "result": "ok: ball-2."}
+{"step": 64, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.05, 0.95, -0.05], "r": 0.34}}, "ok": true, "result": "ok: ball-3."}
+{"step": 65, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.1, "role": "accent"}, "params": {"at": [-2.38, 0.8, -0.02], "r": [0.3, 0.18, 0.2]}}, "ok": true, "result": "ok: ball-4."}
+{"step": 66, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.42, 0.72, -0.02], "r": [0.18, 0.12, 0.14]}}, "ok": true, "result": "ok: ball-5."}
+{"step": 67, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.92, 1.28, 0.18], "r": 0.2, "shape": "d4"}}, "ok": true, "result": "ok: regular."}
+{"step": 68, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.88, 1.28, -0.28], "r": 0.2, "shape": "d4"}}, "ok": true, "result": "ok: regular-2."}
+{"step": 69, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.9, 1.22, 0.14], "r": 0.09}}, "ok": true, "result": "ok: ball-6."}
+{"step": 70, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.86, 1.22, -0.24], "r": 0.09}}, "ok": true, "result": "ok: ball-7."}
+{"step": 71, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 10247 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.6,6.4"}
+{"step": 72, "tool": "remove_part", "args": {"id": "torus"}, "ok": true, "result": "ok."}
+{"step": 73, "tool": "remove_part", "args": {"id": "tube"}, "ok": true, "result": "ok."}
+{"step": 74, "tool": "remove_part", "args": {"id": "ball"}, "ok": true, "result": "ok."}
+{"step": 75, "tool": "remove_part", "args": {"id": "ball-2"}, "ok": true, "result": "ok."}
+{"step": 76, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 77, "tool": "remove_part", "args": {"id": "ball-4"}, "ok": true, "result": "ok."}
+{"step": 78, "tool": "remove_part", "args": {"id": "ball-5"}, "ok": true, "result": "ok."}
+{"step": 79, "tool": "remove_part", "args": {"id": "regular"}, "ok": true, "result": "ok."}
+{"step": 80, "tool": "remove_part", "args": {"id": "regular-2"}, "ok": true, "result": "ok."}
+{"step": 81, "tool": "remove_part", "args": {"id": "ball-6"}, "ok": true, "result": "ok."}
+{"step": 82, "tool": "remove_part", "args": {"id": "ball-7"}, "ok": true, "result": "ok."}
+{"step": 83, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.2, 0.4, 0.25], "id": "fox-body", "r": [0.9, 0.5, 0.72]}}, "ok": false, "result": "put \"id\" in its own argument, not in params"}
+{"step": 84, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.2, 0.4, 0.25], "r": [0.95, 0.55, 0.78]}}, "ok": true, "result": "ok: ball."}
+{"step": 85, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"pts": [[-1, 0.3, -0.5], [-0.35, 0.2, -0.25], [-0.3, 0.28, 0.4], [-0.9, 0.45, 0.85], [-1.7, 0.5, 0.7], [-2.05, 0.45, 0.15]], "r": [0.14, 0.34]}}, "ok": true, "result": "ok: tube."}
+{"step": 86, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.75, 0.62, 0.35], "r": 0.38}}, "ok": true, "result": "ok: ball-2."}
+{"step": 87, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.1, "role": "accent"}, "params": {"at": [-2.12, 0.45, 0.42], "r": [0.3, 0.18, 0.2]}}, "ok": true, "result": "ok: ball-3."}
+{"step": 88, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.2, 0.38, 0.42], "r": [0.16, 0.11, 0.13]}}, "ok": true, "result": "ok: ball-4."}
+{"step": 89, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.08, 0.62, 0.78], "r": 0.16}}, "ok": true, "result": "ok: ball-5."}
+{"step": 90, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.72, 1.02, 0.14], "r": 0.17, "shape": "d4"}}, "ok": true, "result": "ok: regular."}
+{"step": 91, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.68, 1, 0.6], "r": 0.17, "shape": "d4"}}, "ok": true, "result": "ok: regular-2."}
+{"step": 92, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 8822 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.31,6.4"}
+{"step": 93, "tool": "render", "args": {"pitch": 0.5, "yaw": 2.4}, "ok": true, "result": "Rendered. 8822 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.31,6.4"}
+{"step": 94, "tool": "remove_part", "args": {"id": "tube"}, "ok": true, "result": "ok."}
+{"step": 95, "tool": "remove_part", "args": {"id": "ball-2"}, "ok": true, "result": "ok."}
+{"step": 96, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 97, "tool": "remove_part", "args": {"id": "ball-4"}, "ok": true, "result": "ok."}
+{"step": 98, "tool": "remove_part", "args": {"id": "ball-5"}, "ok": true, "result": "ok."}
+{"step": 99, "tool": "remove_part", "args": {"id": "regular"}, "ok": true, "result": "ok."}
+{"step": 100, "tool": "remove_part", "args": {"id": "regular-2"}, "ok": true, "result": "ok."}
+{"step": 101, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"pts": [[-1.1, 0.32, -0.5], [-0.35, 0.25, -0.05], [-0.6, 0.38, 0.62], [-1.35, 0.52, 0.78], [-1.92, 0.48, 0.35]], "r": [0.15, 0.34]}}, "ok": true, "result": "ok: tube."}
+{"step": 102, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.82, 0.62, -0.18], "r": 0.42}}, "ok": true, "result": "ok: ball-2."}
+{"step": 103, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.1, "role": "accent"}, "params": {"at": [-2.18, 0.42, -0.25], "r": [0.28, 0.17, 0.19]}}, "ok": true, "result": "ok: ball-3."}
+{"step": 104, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.32, 0.35, -0.25], "r": [0.15, 0.1, 0.12]}}, "ok": true, "result": "ok: ball-4."}
+{"step": 105, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.14, 0.48, -0.52], "r": 0.17}}, "ok": true, "result": "ok: ball-5."}
+{"step": 106, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.72, 1, -0.36], "r": 0.17, "shape": "d4"}}, "ok": true, "result": "ok: regular."}
+{"step": 107, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.62, 0.98, 0.02], "r": 0.17, "shape": "d4"}}, "ok": true, "result": "ok: regular-2."}
+{"step": 108, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.7, 1.08, -0.34], "r": 0.09}}, "ok": true, "result": "ok: ball-6."}
+{"step": 109, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.6, 1.06, 0], "r": 0.09}}, "ok": true, "result": "ok: ball-7."}
+{"step": 110, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 8827 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.29,6.4"}
+{"step": 111, "tool": "remove_part", "args": {"id": "tube"}, "ok": true, "result": "ok."}
+{"step": 112, "tool": "remove_part", "args": {"id": "ball-2"}, "ok": true, "result": "ok."}
+{"step": 113, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 114, "tool": "remove_part", "args": {"id": "ball-4"}, "ok": true, "result": "ok."}
+{"step": 115, "tool": "remove_part", "args": {"id": "ball-5"}, "ok": true, "result": "ok."}
+{"step": 116, "tool": "remove_part", "args": {"id": "regular"}, "ok": true, "result": "ok."}
+{"step": 117, "tool": "remove_part", "args": {"id": "regular-2"}, "ok": true, "result": "ok."}
+{"step": 118, "tool": "remove_part", "args": {"id": "ball-6"}, "ok": true, "result": "ok."}
+{"step": 119, "tool": "remove_part", "args": {"id": "ball-7"}, "ok": true, "result": "ok."}
+{"step": 120, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.15, 0.5, 0], "r": [0.62, 0.55, 0.6]}}, "ok": true, "result": "ok: ball-2."}
+{"step": 121, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.5, 0.88, 0.1], "r": 0.4}}, "ok": true, "result": "ok: ball-3."}
+{"step": 122, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"pts": [[-1, 0.35, -0.42], [-0.4, 0.22, 0], [-0.7, 0.35, 0.6], [-1.5, 0.5, 0.62], [-2.02, 0.55, 0.18]], "r": [0.14, 0.3]}}, "ok": true, "result": "ok: tube."}
+{"step": 123, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.05, 0.5, 0.1], "r": [0.26, 0.2, 0.24]}}, "ok": true, "result": "ok: ball-4."}
+{"step": 124, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.1, "role": "accent"}, "params": {"at": [-1.72, 0.62, -0.22], "r": [0.28, 0.22, 0.24]}}, "ok": true, "result": "ok: ball-5."}
+{"step": 125, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.1, "role": "accent"}, "params": {"at": [-1.78, 0.6, 0.44], "r": [0.26, 0.2, 0.22]}}, "ok": true, "result": "ok: ball-6."}
+{"step": 126, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.66, 1.22, -0.08], "r": 0.15, "shape": "d4"}}, "ok": true, "result": "ok: regular."}
+{"step": 127, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.6, 1.2, 0.3], "r": 0.15, "shape": "d4"}}, "ok": true, "result": "ok: regular-2."}
+{"step": 128, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 8795 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.48,6.4"}
+{"step": 129, "tool": "remove_part", "args": {"id": "ball-2"}, "ok": true, "result": "ok."}
+{"step": 130, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 131, "tool": "remove_part", "args": {"id": "tube"}, "ok": true, "result": "ok."}
+{"step": 132, "tool": "remove_part", "args": {"id": "ball-4"}, "ok": true, "result": "ok."}
+{"step": 133, "tool": "remove_part", "args": {"id": "ball-5"}, "ok": true, "result": "ok."}
+{"step": 134, "tool": "remove_part", "args": {"id": "ball-6"}, "ok": true, "result": "ok."}
+{"step": 135, "tool": "remove_part", "args": {"id": "regular"}, "ok": true, "result": "ok."}
+{"step": 136, "tool": "remove_part", "args": {"id": "regular-2"}, "ok": true, "result": "ok."}
+{"step": 137, "tool": "add_solid", "args": {"kind": "puff", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.15, 0.02, 0.1], "height": 0.8, "outline": {"svg": "M -1.15 0.3 C -1.3 0.85 -0.85 1.42 -0.15 1.5 C 0.62 1.58 1.28 1.2 1.38 0.5 C 1.45 -0.1 1.05 -0.62 0.35 -0.72 C -0.4 -0.82 -1.02 -0.5 -1.15 0.3 Z"}}}, "ok": true, "result": "ok: puff."}
+{"step": 138, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 8423 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.15,6.4"}
+{"step": 139, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"pts": [[-0.85, 0.3, -0.35], [-0.15, 0.18, 0.05], [-0.45, 0.3, 0.72], [-1.3, 0.48, 0.85], [-1.95, 0.5, 0.42]], "r": [0.15, 0.32]}}, "ok": true, "result": "ok: tube."}
+{"step": 140, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.98, 0.42, 0.32], "r": [0.28, 0.22, 0.26]}}, "ok": true, "result": "ok: ball-2."}
+{"step": 141, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.12, "role": "accent"}, "params": {"at": [-1.6, 0.72, 0.02], "r": 0.42}}, "ok": true, "result": "ok: ball-3."}
+{"step": 142, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.12, "role": "accent"}, "params": {"at": [-1.98, 0.55, -0.18], "r": [0.28, 0.22, 0.24]}}, "ok": true, "result": "ok: ball-4."}
+{"step": 143, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.12, "role": "accent"}, "params": {"at": [-1.9, 0.58, 0.6], "r": [0.26, 0.2, 0.22]}}, "ok": true, "result": "ok: ball-5."}
+{"step": 144, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.5, 1.12, -0.14], "r": 0.16, "shape": "d4"}}, "ok": true, "result": "ok: regular."}
+{"step": 145, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.36, 1.1, 0.3], "r": 0.16, "shape": "d4"}}, "ok": true, "result": "ok: regular-2."}
+{"step": 146, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.48, 1.18, -0.12], "r": 0.08}}, "ok": true, "result": "ok: ball-6."}
+{"step": 147, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.34, 1.16, 0.28], "r": 0.08}}, "ok": true, "result": "ok: ball-7."}
+{"step": 148, "tool": "add_solid", "args": {"kind": "ball", "mat": "dark", "params": {"at": [-2.16, 0.56, 0.1], "r": 0.06}}, "ok": true, "result": "ok: ball-8."}
+{"step": 149, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9459 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.4,6.41"}
+{"step": 150, "tool": "render", "args": {"pitch": 0.45, "yaw": 2.2}, "ok": true, "result": "Rendered. 9459 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.4,6.41"}
+{"step": 151, "tool": "remove_part", "args": {"id": "puff"}, "ok": true, "result": "ok."}
+{"step": 152, "tool": "remove_part", "args": {"id": "tube"}, "ok": true, "result": "ok."}
+{"step": 153, "tool": "remove_part", "args": {"id": "ball-2"}, "ok": true, "result": "ok."}
+{"step": 154, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 155, "tool": "remove_part", "args": {"id": "ball-4"}, "ok": true, "result": "ok."}
+{"step": 156, "tool": "remove_part", "args": {"id": "ball-5"}, "ok": true, "result": "ok."}
+{"step": 157, "tool": "remove_part", "args": {"id": "regular"}, "ok": true, "result": "ok."}
+{"step": 158, "tool": "remove_part", "args": {"id": "regular-2"}, "ok": true, "result": "ok."}
+{"step": 159, "tool": "remove_part", "args": {"id": "ball-6"}, "ok": true, "result": "ok."}
+{"step": 160, "tool": "remove_part", "args": {"id": "ball-7"}, "ok": true, "result": "ok."}
+{"step": 161, "tool": "remove_part", "args": {"id": "ball-8"}, "ok": true, "result": "ok."}
+{"step": 162, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.3, 0.45, 0], "r": [0.9, 0.52, 0.68]}}, "ok": true, "result": "ok: ball-2."}
+{"step": 163, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.15, 0.5, 0.05], "r": 0.34}}, "ok": true, "result": "ok: ball-3."}
+{"step": 164, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.1, "role": "accent"}, "params": {"at": [-2.52, 0.34, 0.05], "r": [0.24, 0.15, 0.18]}}, "ok": true, "result": "ok: ball-4."}
+{"step": 165, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.62, 0.26, 0.05], "r": [0.12, 0.08, 0.1]}}, "ok": true, "result": "ok: ball-5."}
+{"step": 166, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.44, 0.42, 0.3], "r": 0.15}}, "ok": true, "result": "ok: ball-6."}
+{"step": 167, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.02, 0.82, -0.16], "r": 0.15, "shape": "d4"}}, "ok": true, "result": "ok: regular."}
+{"step": 168, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.96, 0.8, 0.28], "r": 0.15, "shape": "d4"}}, "ok": true, "result": "ok: regular-2."}
+{"step": 169, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2, 0.88, -0.14], "r": 0.08}}, "ok": true, "result": "ok: ball-7."}
+{"step": 170, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.94, 0.86, 0.26], "r": 0.08}}, "ok": true, "result": "ok: ball-8."}
+{"step": 171, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"pts": [[-0.95, 0.32, -0.38], [-0.35, 0.2, 0], [-0.55, 0.32, 0.55], [-1.35, 0.5, 0.62], [-2.05, 0.52, 0.3]], "r": [0.13, 0.28]}}, "ok": true, "result": "ok: tube."}
+{"step": 172, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.02, 0.44, 0.22], "r": [0.22, 0.18, 0.2]}}, "ok": true, "result": "ok: ball-9."}
+{"step": 173, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.7, 0.12, -0.35], "r": [0.2, 0.12, 0.16]}}, "ok": true, "result": "ok: ball-10."}
+{"step": 174, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.62, 0.12, 0.32], "r": [0.18, 0.11, 0.15]}}, "ok": true, "result": "ok: ball-11."}
+{"step": 175, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 8836 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.15,6.4"}
+{"step": 176, "tool": "render", "args": {"pitch": 0.45, "yaw": 2.3}, "ok": true, "result": "Rendered. 8836 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.15,6.4"}
+{"step": 177, "tool": "remove_part", "args": {"id": "tube"}, "ok": true, "result": "ok."}
+{"step": 178, "tool": "add_solid", "args": {"kind": "tube", "mat": {"noise": 0.15, "role": "accent"}, "params": {"pts": [[-0.95, 0.32, -0.38], [-0.35, 0.2, 0], [-0.55, 0.32, 0.55], [-1.35, 0.5, 0.62], [-1.95, 0.48, 0.28]], "r": [0.13, 0.24]}}, "ok": true, "result": "ok: tube."}
+{"step": 179, "tool": "edit_part", "args": {"id": "ball-9", "params": {"at": [-1.9, 0.4, 0.2], "r": [0.18, 0.14, 0.16]}}, "ok": true, "result": "ok."}
+{"step": 180, "tool": "edit_part", "args": {"id": "ball-6", "params": {"at": [-2.36, 0.4, 0.28], "r": 0.12}}, "ok": true, "result": "ok."}
+{"step": 181, "tool": "remove_part", "args": {"id": "ball-10"}, "ok": true, "result": "ok."}
+{"step": 182, "tool": "remove_part", "args": {"id": "ball-11"}, "ok": true, "result": "ok."}
+{"step": 183, "tool": "edit_part", "args": {"id": "revolve", "params": {"turn": [0, 0.12, 0]}}, "ok": true, "result": "ok."}
+{"step": 184, "tool": "edit_part", "args": {"id": "revolve-2", "params": {"turn": [0, -0.1, 0]}}, "ok": true, "result": "ok."}
+{"step": 185, "tool": "set_material", "args": {"id": "revolve-2", "mat": {"glow": true, "role": "ember"}}, "ok": true, "result": "ok."}
+{"step": 186, "tool": "set_material", "args": {"id": "revolve-2", "mat": {"glow": true, "role": "glow"}}, "ok": true, "result": "ok."}
+{"step": 187, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 8756 splats (limit 250000), extent [-6.47,-0.09,-6.59]..[6.94,1.15,6.4"}
+{"step": 188, "tool": "add_motion", "args": {"do": "squash", "params": {"amount": 0.18, "axis": [0, 1, 0], "period": 0.45}, "part": "flame"}, "ok": false, "result": "no solid is marked as part \"flame\"; give a solid \"part\" with add_solid or edit_p"}
+{"step": 189, "tool": "edit_part", "args": {"id": "revolve", "params": {"part": "flame"}}, "ok": true, "result": "ok."}
+{"step": 190, "tool": "edit_part", "args": {"id": "revolve-2", "params": {"part": "flame"}}, "ok": true, "result": "ok."}
+{"step": 191, "tool": "add_motion", "args": {"do": "squash", "joint": [1.5, 0.15, 0.05], "params": {"amount": 0.18, "axis": [0, 1, 0], "period": 0.45}, "part": "flame"}, "ok": true, "result": "ok."}
+{"step": 192, "tool": "set_camera", "args": {"dist": 6.2, "pitch": 0.35, "target": [0.2, 0.5, 0.1], "yaw": 0.6}, "ok": true, "result": "ok."}
+{"step": 193, "tool": "set_light", "args": {"amb": 0.25, "sky": 0.2, "sun": [0.6, 0.5, 0.5]}, "ok": true, "result": "ok."}
+{"step": 194, "tool": "turn", "args": {"n": 4}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 195, "tool": "remove_part", "args": {"id": "ball-5"}, "ok": true, "result": "ok."}
+{"step": 196, "tool": "remove_part", "args": {"id": "ball-7"}, "ok": true, "result": "ok."}
+{"step": 197, "tool": "remove_part", "args": {"id": "ball-8"}, "ok": true, "result": "ok."}
+{"step": 198, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.08, 0.72, -0.2], "r": 0.15, "shape": "d4", "turn": [0.4, 0.35, 0.2]}}, "ok": true, "result": "ok: regular-3."}
+{"step": 199, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-1.98, 0.72, 0.32], "r": 0.15, "shape": "d4", "turn": [-0.3, -0.3, -0.2]}}, "ok": true, "result": "ok: regular-4."}
+{"step": 200, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.42, 0.22, 0.06], "r": [0.12, 0.09, 0.1]}}, "ok": true, "result": "ok: ball-5."}
+{"step": 201, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.05, 0.09, -0.28], "r": [0.16, 0.09, 0.13]}}, "ok": true, "result": "ok: ball-7."}
+{"step": 202, "tool": "add_solid", "args": {"kind": "rock", "mat": "earth", "params": {"at": [-1.35, 0.06, -1.15], "r": 0.14}}, "ok": true, "result": "ok: rock-7."}
+{"step": 203, "tool": "add_solid", "args": {"kind": "rock", "mat": "earth", "params": {"at": [0.3, 0.05, 1.15], "r": 0.12}}, "ok": true, "result": "ok: rock-8."}
+{"step": 204, "tool": "add_solid", "args": {"kind": "rock", "mat": "wood", "params": {"at": [-2.7, 0.07, -0.9], "r": 0.13}}, "ok": true, "result": "ok: rock-9."}
+{"step": 205, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9744 splats (limit 250000), extent [-6.47,-0.83,-6.59]..[6.94,1.15,6.4"}
+{"step": 206, "tool": "render", "args": {"pitch": 0.4, "yaw": 3.6}, "ok": true, "result": "Rendered. 9744 splats (limit 250000), extent [-6.47,-0.83,-6.59]..[6.94,1.15,6.4"}
+{"step": 207, "tool": "remove_part", "args": {"id": "ball-4"}, "ok": true, "result": "ok."}
+{"step": 208, "tool": "remove_part", "args": {"id": "ball-6"}, "ok": true, "result": "ok."}
+{"step": 209, "tool": "remove_part", "args": {"id": "ball-9"}, "ok": true, "result": "ok."}
+{"step": 210, "tool": "remove_part", "args": {"id": "regular-3"}, "ok": true, "result": "ok."}
+{"step": 211, "tool": "remove_part", "args": {"id": "regular-4"}, "ok": true, "result": "ok."}
+{"step": 212, "tool": "edit_part", "args": {"id": "ball-3", "params": {"at": [-2.35, 0.5, 0.05], "r": 0.26}}, "ok": true, "result": "ok."}
+{"step": 213, "tool": "edit_part", "args": {"id": "tube", "params": {"pts": [[-1, 0.32, -0.42], [-0.42, 0.2, 0], [-0.62, 0.34, 0.5], [-1.3, 0.5, 0.58], [-1.9, 0.46, 0.26]], "r": [0.13, 0.24]}}, "ok": true, "result": "ok."}
+{"step": 214, "tool": "edit_part", "args": {"id": "ball-5", "params": {"at": [-2.52, 0.22, 0.05]}}, "ok": true, "result": "ok."}
+{"step": 215, "tool": "edit_part", "args": {"id": "ball-7", "params": {"at": [-1.1, 0.09, -0.3]}}, "ok": true, "result": "ok."}
+{"step": 216, "tool": "edit_part", "args": {"id": "ball-2", "params": {"r": [0.88, 0.5, 0.62]}}, "ok": true, "result": "ok."}
+{"step": 217, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.24, 0.72, -0.16], "r": 0.14, "shape": "d4", "turn": [0.5, 0.4, 0.25]}}, "ok": true, "result": "ok: regular-3."}
+{"step": 218, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.16, 0.72, 0.28], "r": 0.14, "shape": "d4", "turn": [-0.4, -0.35, -0.25]}}, "ok": true, "result": "ok: regular-4."}
+{"step": 219, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.46, 0.44, 0.3], "r": 0.11}}, "ok": true, "result": "ok: ball-4."}
+{"step": 220, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.95, 0.42, 0.18], "r": [0.16, 0.13, 0.15]}}, "ok": true, "result": "ok: ball-6."}
+{"step": 221, "tool": "add_solid", "args": {"kind": "ball", "mat": "dark", "params": {"at": [-2.58, 0.56, 0.04], "r": 0.05}}, "ok": true, "result": "ok: ball-8."}
+{"step": 222, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9822 splats (limit 250000), extent [-6.47,-0.83,-6.59]..[6.94,1.15,6.4"}
+{"step": 223, "tool": "render", "args": {"pitch": 0.35, "yaw": 2}, "ok": true, "result": "Rendered. 9822 splats (limit 250000), extent [-6.47,-0.83,-6.59]..[6.94,1.15,6.4"}
+{"step": 224, "tool": "remove_part", "args": {"id": "ball-4"}, "ok": true, "result": "ok."}
+{"step": 225, "tool": "remove_part", "args": {"id": "ball-6"}, "ok": true, "result": "ok."}
+{"step": 226, "tool": "remove_part", "args": {"id": "ball-8"}, "ok": true, "result": "ok."}
+{"step": 227, "tool": "remove_part", "args": {"id": "regular-3"}, "ok": true, "result": "ok."}
+{"step": 228, "tool": "remove_part", "args": {"id": "regular-4"}, "ok": true, "result": "ok."}
+{"step": 229, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.35, 0.72, 0.05], "r": 0.3}}, "ok": true, "result": "ok: ball-4."}
+{"step": 230, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.1, "role": "accent"}, "params": {"at": [-2.72, 0.5, 0.05], "r": [0.22, 0.16, 0.18]}}, "ok": true, "result": "ok: ball-6."}
+{"step": 231, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.84, 0.42, 0.05], "r": [0.12, 0.1, 0.12]}}, "ok": true, "result": "ok: ball-8."}
+{"step": 232, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.7, 0.56, 0.28], "r": 0.12}}, "ok": true, "result": "ok: ball-9."}
+{"step": 233, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.22, 0.98, -0.12], "r": 0.16, "shape": "d4", "turn": [0.5, 0.4, 0.25]}}, "ok": true, "result": "ok: regular-3."}
+{"step": 234, "tool": "add_solid", "args": {"kind": "regular", "mat": {"noise": 0.15, "role": "accent"}, "params": {"at": [-2.14, 0.98, 0.26], "r": 0.16, "shape": "d4", "turn": [-0.4, -0.35, -0.25]}}, "ok": true, "result": "ok: regular-4."}
+{"step": 235, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.2, 1.04, -0.1], "r": 0.08}}, "ok": true, "result": "ok: ball-10."}
+{"step": 236, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.12, 1.04, 0.24], "r": 0.08}}, "ok": true, "result": "ok: ball-11."}
+{"step": 237, "tool": "edit_part", "args": {"id": "ball-2", "params": {"r": [0.88, 0.5, 0.58]}}, "ok": true, "result": "ok."}
+{"step": 238, "tool": "edit_part", "args": {"id": "ball-5", "params": {"at": [-2.9, 0.24, 0.05]}}, "ok": true, "result": "ok."}
+{"step": 239, "tool": "edit_part", "args": {"id": "ball-3", "params": {"at": [-2.3, 0.55, 0.05], "r": 0.22}}, "ok": true, "result": "ok."}
+{"step": 240, "tool": "edit_part", "args": {"id": "tube", "params": {"pts": [[-0.98, 0.3, -0.4], [-0.42, 0.18, 0], [-0.6, 0.32, 0.48], [-1.28, 0.48, 0.55], [-1.88, 0.46, 0.26]], "r": [0.12, 0.22]}}, "ok": true, "result": "ok."}
+{"step": 241, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 242, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 9999 splats (limit 250000), extent [-6.47,-0.83,-6.59]..[6.94,1.39,6.4"}
+{"step": 243, "tool": "render", "args": {"pitch": 0.35, "yaw": 2.05}, "ok": true, "result": "Rendered. 9999 splats (limit 250000), extent [-6.47,-0.83,-6.59]..[6.94,1.39,6.4"}
+{"step": 244, "tool": "turn", "args": {"n": 4}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 245, "tool": "remove_part", "args": {"id": "ball-5"}, "ok": true, "result": "ok."}
+{"step": 246, "tool": "remove_part", "args": {"id": "ball-7"}, "ok": true, "result": "ok."}
+{"step": 247, "tool": "edit_part", "args": {"id": "ball-4", "params": {"at": [-2.32, 0.68, 0.05], "r": 0.3}}, "ok": true, "result": "ok."}
+{"step": 248, "tool": "edit_part", "args": {"id": "ball-6", "params": {"at": [-2.7, 0.46, 0.05]}}, "ok": true, "result": "ok."}
+{"step": 249, "tool": "edit_part", "args": {"id": "ball-8", "params": {"at": [-2.82, 0.38, 0.05]}}, "ok": true, "result": "ok."}
+{"step": 250, "tool": "edit_part", "args": {"id": "ball-9", "params": {"at": [-2.68, 0.52, 0.26]}}, "ok": true, "result": "ok."}
+{"step": 251, "tool": "edit_part", "args": {"id": "regular-3", "params": {"at": [-2.2, 0.94, -0.12]}}, "ok": true, "result": "ok."}
+{"step": 252, "tool": "edit_part", "args": {"id": "regular-4", "params": {"at": [-2.12, 0.94, 0.26]}}, "ok": true, "result": "ok."}
+{"step": 253, "tool": "edit_part", "args": {"id": "ball-10", "params": {"at": [-2.18, 1, -0.1]}}, "ok": true, "result": "ok."}
+{"step": 254, "tool": "edit_part", "args": {"id": "ball-11", "params": {"at": [-2.1, 1, 0.24]}}, "ok": true, "result": "ok."}
+{"step": 255, "tool": "edit_part", "args": {"id": "tube", "params": {"pts": [[-1.05, 0.28, -0.35], [-0.5, 0.18, 0], [-0.68, 0.3, 0.45], [-1.3, 0.44, 0.5], [-1.82, 0.4, 0.28]], "r": [0.12, 0.22]}}, "ok": true, "result": "ok."}
+{"step": 256, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-1.86, 0.16, -0.18], "r": [0.16, 0.1, 0.13]}}, "ok": true, "result": "ok: ball-3."}
+{"step": 257, "tool": "add_solid", "args": {"kind": "ball", "mat": "bone", "params": {"at": [-2.35, 0.18, 0.3], "r": [0.15, 0.1, 0.13]}}, "ok": true, "result": "ok: ball-5."}
+{"step": 258, "tool": "add_solid", "args": {"kind": "rock", "mat": "earth", "params": {"at": [-1.3, 0.06, -1.2], "r": 0.14}}, "ok": true, "result": "ok: rock-10."}
+{"step": 259, "tool": "add_solid", "args": {"kind": "rock", "mat": "earth", "params": {"at": [0.35, 0.05, 1.2], "r": 0.12}}, "ok": true, "result": "ok: rock-11."}
+{"step": 260, "tool": "add_solid", "args": {"kind": "rock", "mat": "wood", "params": {"at": [-2.75, 0.07, -0.95], "r": 0.13}}, "ok": true, "result": "ok: rock-12."}
+{"step": 261, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 10110 splats (limit 250000), extent [-6.47,-0.83,-6.59]..[6.94,1.35,6."}
+{"step": 262, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 263, "tool": "remove_part", "args": {"id": "ball-5"}, "ok": true, "result": "ok."}
+{"step": 264, "tool": "remove_part", "args": {"id": "rock-7"}, "ok": true, "result": "ok."}
+{"step": 265, "tool": "remove_part", "args": {"id": "rock-8"}, "ok": true, "result": "ok."}
+{"step": 266, "tool": "remove_part", "args": {"id": "rock-9"}, "ok": true, "result": "ok."}
+{"step": 267, "tool": "remove_part", "args": {"id": "rock-10"}, "ok": true, "result": "ok."}
+{"step": 268, "tool": "remove_part", "args": {"id": "rock-11"}, "ok": true, "result": "ok."}
+{"step": 269, "tool": "remove_part", "args": {"id": "rock-12"}, "ok": true, "result": "ok."}
+{"step": 270, "tool": "turn", "args": {"n": 4}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 271, "tool": "finish", "args": {"summary": "A red fox curled up asleep on a dark patch of ground beside a small campfire \u2014 glowing flickering flames ringed by stones and crossed logs, with the fox's bushy tail wrapped around its body and ears perched on its head.", "title": "Fox by the Campfire"}, "ok": true, "result": "Finished. Reply to Mo with exactly these lines, unchanged, and nothing else:\nFox"}

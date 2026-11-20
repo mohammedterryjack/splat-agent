@@ -1,0 +1,38 @@
+{"step": 1, "tool": "catalog", "args": {"query": "box"}, "ok": true, "result": "box: box: at (centre), half (half-extents [x, y, z]), round (corner rounding)\n  "}
+{"step": 2, "tool": "catalog", "args": {"query": "motion"}, "ok": true, "result": "add_motion do: spin {axis, speed}, bob {axis, amount, period, phase}, turn {axis"}
+{"step": 3, "tool": "add_solid", "args": {"kind": "box", "params": {"at": [3.4, 0.1, 2.4], "half": [0.95, 0.28, 0.36], "round": 0.18}, "mat": "wood", "id": "boat-hull", "part": "boat"}, "ok": true, "result": "ok: boat-hull."}
+{"step": 4, "tool": "add_solid", "args": {"kind": "box", "mat": "wood", "params": {"at": [3.4, 0.12, 2.4], "half": [0.75, 0.22, 0.22], "round": 0.1}, "id": "boat-cabin", "part": "boat"}, "ok": true, "result": "ok: boat-cabin."}
+{"step": 5, "tool": "join", "args": {"how": "cut", "a": "boat-hull", "b": "boat-cabin", "id": "boat-hull"}, "ok": true, "result": "ok: boat-hull."}
+{"step": 6, "tool": "add_solid", "args": {"kind": "box", "mat": "wood", "params": {"at": [4.15, 0.25, 2.4], "half": [0.06, 0.16, 0.18]}, "id": "boat-transom", "part": "boat"}, "ok": true, "result": "ok: boat-transom."}
+{"step": 7, "tool": "add_solid", "args": {"kind": "box", "mat": "wood", "params": {"at": [2.65, 0.25, 2.4], "half": [0.06, 0.16, 0.18]}, "id": "boat-bowplate", "part": "boat"}, "ok": true, "result": "ok: boat-bowplate."}
+{"step": 8, "tool": "add_motion", "args": {"do": "bob", "part": "boat", "params": {"axis": [0, 1, 0], "amount": 0.08, "period": 3.2}}, "ok": true, "result": "ok."}
+{"step": 9, "tool": "add_motion", "args": {"do": "turn", "part": "boat", "params": {"axis": [0, 0, 1], "amount": 0.06, "period": 4.1}}, "ok": true, "result": "ok."}
+{"step": 10, "tool": "render", "args": {"yaw": 0.5}, "ok": true, "result": "Rendered. 34874 splats (limit 250000), extent [-7.34,-0.18,-7.43]..[7.83,6.37,7."}
+{"step": 11, "tool": "render", "args": {"t": 0.8, "yaw": 1.2}, "ok": true, "result": "Rendered. 34874 splats (limit 250000), extent [-7.34,-0.14,-7.43]..[7.83,6.37,7."}
+{"step": 12, "tool": "remove_part", "args": {"id": "boat-hull"}, "ok": true, "result": "ok."}
+{"step": 13, "tool": "remove_part", "args": {"id": "boat-transom"}, "ok": true, "result": "ok."}
+{"step": 14, "tool": "remove_part", "args": {"id": "boat-bowplate"}, "ok": true, "result": "ok."}
+{"step": 15, "tool": "add_solid", "args": {"kind": "extrude", "mat": "wood", "params": {"at": [3.5, 0, 2.6], "profile": [[-0.9, -0.3], [0.9, -0.3], [1.05, 0.25], [-1.05, 0.25]], "depth": 0.7, "res": 0.1}, "id": "boat-hull", "part": "boat"}, "ok": false, "result": "refused (add_solid boat-hull); the scene is unchanged. Fix and try again:\nERROR "}
+{"step": 16, "tool": "catalog", "args": {"query": "extrude"}, "ok": true, "result": "extrude: a 2D outline pushed out: outline ({\"ngon\": 6, \"r\": 1}, {\"star\": 5, \"r\":"}
+{"step": 17, "tool": "add_solid", "args": {"kind": "ball", "params": {"at": [-0.4, 1, -0.4], "r": 1}, "mat": "water", "part": "probe", "id": "probe"}, "ok": true, "result": "ok: probe."}
+{"step": 18, "tool": "remove_part", "args": {"id": "probe"}, "ok": true, "result": "ok."}
+{"step": 19, "tool": "add_solid", "args": {"kind": "extrude", "mat": "wood", "params": {"outline": {"svg": "M -1 0 L 1 0 L 0.8 0.34 L -0.8 0.34 Z"}, "at": [3.5, 0.45, 2.6], "depth": 1.4}, "id": "boat-hull", "part": "boat"}, "ok": true, "result": "ok: boat-hull."}
+{"step": 20, "tool": "render", "args": {"yaw": 0.9}, "ok": true, "result": "Rendered. 34708 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.37,7."}
+{"step": 21, "tool": "remove_part", "args": {"id": "boat-hull"}, "ok": true, "result": "ok."}
+{"step": 22, "tool": "add_solid", "args": {"mat": "water", "params": {"at": [1.5, 0.15, 1.5], "r": 1}, "kind": "ball", "id": "probe"}, "ok": true, "result": "ok: probe."}
+{"step": 23, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 33788 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.37,7."}
+{"step": 24, "tool": "edit_part", "args": {"id": "probe", "params": {"mat": "metal"}}, "ok": true, "result": "ok."}
+{"step": 25, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 33788 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.37,7."}
+{"step": 26, "tool": "edit_part", "args": {"id": "probe", "params": {"at": [2.4, 0.5, 2.4]}}, "ok": true, "result": "ok."}
+{"step": 27, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 34383 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.37,7."}
+{"step": 28, "tool": "remove_part", "args": {"id": "probe"}, "ok": true, "result": "ok."}
+{"step": 29, "tool": "add_solid", "args": {"kind": "box", "mat": "water", "params": {"at": [0, 0.14, 0], "half": [0.4, 0.2, 0.4]}, "id": "probe2"}, "ok": true, "result": "ok: probe2."}
+{"step": 30, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 33704 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.37,7."}
+{"step": 31, "tool": "edit_part", "args": {"id": "probe2", "params": {"mat": "bone"}}, "ok": true, "result": "ok."}
+{"step": 32, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 33704 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.37,7."}
+{"step": 33, "tool": "remove_part", "args": {"id": "probe2"}, "ok": true, "result": "ok."}
+{"step": 34, "tool": "add_solid", "args": {"mat": "wood", "params": {"at": [3.5, 0.52, 2.7], "half": [0.5, 0.45, 1.1], "round": 0.3}, "kind": "box", "id": "boat-hull", "part": "boat"}, "ok": true, "result": "ok: boat-hull."}
+{"step": 35, "tool": "add_solid", "args": {"mat": "water", "kind": "box", "params": {"half": [0.38, 0.3, 0.98], "at": [3.5, 0.72, 2.7], "round": 0.2}, "id": "boat-well", "part": "boat"}, "ok": true, "result": "ok: boat-well."}
+{"step": 36, "tool": "join", "args": {"a": "boat-hull", "b": "boat-well", "how": "cut", "id": "boat-hull"}, "ok": true, "result": "ok: boat-hull."}
+{"step": 37, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 38, "tool": "finish", "args": {"summary": "Added a small hollow wooden rowing boat floating on the sea beside the island lighthouse, animated with a gentle bob and a slight rocking sway.", "title": "Rowing boat at the island"}, "ok": true, "result": "Finished and delivered: Rowing boat at the island: Added a small hollow wooden r"}

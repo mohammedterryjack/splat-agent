@@ -1,0 +1,36 @@
+{"step": 1, "tool": "catalog", "args": {"query": "kinds"}, "ok": true, "result": "ground: a round patch of ground (rad = radius, default 8). Put it first.\n  needs"}
+{"step": 2, "tool": "catalog", "args": {"query": "lighthouse"}, "ok": true, "result": "nothing matches \"lighthouse\". Sections: kinds, joins, wraps, materials, styles, "}
+{"step": 3, "tool": "set_style", "args": {"style": "slate"}, "ok": true, "result": "ok."}
+{"step": 4, "tool": "add_solid", "args": {"kind": "ground", "params": {"rad": 9}, "mat": "water", "id": "sea"}, "ok": true, "result": "ok: sea."}
+{"step": 5, "tool": "add_solid", "args": {"kind": "rock", "params": {"at": [0, 0.4, 0], "r": [3.2, 1.6, 3.2], "res": 0.14}, "mat": "stone", "id": "island"}, "ok": true, "result": "ok: island."}
+{"step": 6, "tool": "add_solid", "args": {"kind": "lathe", "mat": {"role": "accent", "noise": 0.1}, "params": {"at": [0, 1.2, 0], "h": 4, "r": [[0, 1.1], [0.5, 0.85], [1, 0.62]], "res": 0.12}, "id": "tower"}, "ok": true, "result": "ok: tower."}
+{"step": 7, "tool": "add_solid", "args": {"kind": "lathe", "mat": "pale", "params": {"at": [0, 4.9, 0], "h": 0.7, "r": [[0, 0.8], [1, 0.55]], "res": 0.12}, "id": "gallery"}, "ok": true, "result": "ok: gallery."}
+{"step": 8, "tool": "add_solid", "args": {"mat": "glass", "kind": "ball", "params": {"at": [0, 5.35, 0], "r": [0.55, 0.55, 0.55]}, "id": "lampglass"}, "ok": false, "result": "refused (add_solid lampglass); the scene is unchanged. Fix and try again:\nERROR "}
+{"step": 9, "tool": "add_solid", "args": {"mat": {"glow": true, "role": "glow"}, "kind": "ball", "params": {"at": [0, 5.35, 0], "r": [0.42, 0.42, 0.42]}, "part": "lamp", "id": "lamp"}, "ok": true, "result": "ok: lamp."}
+{"step": 10, "tool": "add_solid", "args": {"mat": "metal", "kind": "box", "params": {"at": [0.45, 5.35, 0], "half": [0.28, 0.3, 0.16]}, "part": "lamp", "id": "lamp-shade"}, "ok": true, "result": "ok: lamp-shade."}
+{"step": 11, "tool": "add_solid", "args": {"mat": "stone", "params": {"at": [0, 6.05, 0], "depth": 0.35, "height": 0.5, "outline": {"ngon": 8, "r": 0.65}}, "kind": "extrude", "id": "roof"}, "ok": false, "result": "refused (add_solid roof); the scene is unchanged. Fix and try again:\nERROR at so"}
+{"step": 12, "tool": "add_solid", "args": {"mat": "stone", "kind": "lathe", "params": {"at": [0, 5.95, 0], "h": 0.6, "r": [[0, 0.72], [1, 0.1]]}, "id": "roof"}, "ok": true, "result": "ok: roof."}
+{"step": 13, "tool": "add_motion", "args": {"do": "spin", "part": "lamp", "params": {"axis": [0, 1, 0], "speed": 0.6}, "joint": [0, 5.35, 0]}, "ok": true, "result": "ok."}
+{"step": 14, "tool": "add_solid", "args": {"mat": "stone", "kind": "box", "params": {"at": [0, 4.8, 0], "half": [0.95, 0.12, 0.95]}, "id": "deck"}, "ok": true, "result": "ok: deck."}
+{"step": 15, "tool": "add_solid", "args": {"mat": "dark", "kind": "box", "params": {"at": [0, 1.9, 0.95], "half": [0.3, 0.65, 0.1]}, "id": "door"}, "ok": true, "result": "ok: door."}
+{"step": 16, "tool": "set_material", "args": {"id": "tower", "mat": {"noise": 0.08, "over": {"patch": 0.35, "role": "pale"}, "role": "ember"}}, "ok": true, "result": "ok."}
+{"step": 17, "tool": "add_solid", "args": {"kind": "rock", "mat": "stone", "params": {"at": [2.6, 0.1, 1.2], "r": [0.8, 0.5, 0.7]}}, "ok": true, "result": "ok: rock."}
+{"step": 18, "tool": "add_solid", "args": {"kind": "rock", "mat": "stone", "params": {"at": [-2.2, 0.1, -1.8], "r": [0.6, 0.4, 0.6]}}, "ok": true, "result": "ok: rock-2."}
+{"step": 19, "tool": "render", "args": {"t": 1}, "ok": true, "result": "Rendered. 33688 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.55,7."}
+{"step": 20, "tool": "set_camera", "args": {"dist": 16, "pitch": 0.25, "target": [0, 3, 0]}, "ok": true, "result": "ok."}
+{"step": 21, "tool": "render", "args": {"t": 2}, "ok": true, "result": "Rendered. 33688 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.55,7."}
+{"step": 22, "tool": "set_material", "args": {"id": "roof", "mat": "metal"}, "ok": true, "result": "ok."}
+{"step": 23, "tool": "set_material", "args": {"id": "deck", "mat": "metal"}, "ok": true, "result": "ok."}
+{"step": 24, "tool": "edit_part", "args": {"id": "gallery", "params": {"h": 0.4, "r": [[0, 0.85], [0.6, 0.8], [1, 0.62]]}}, "ok": true, "result": "ok."}
+{"step": 25, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 26, "tool": "edit_part", "args": {"id": "roof", "params": {"at": [0, 5.72, 0], "h": 0.65, "r": [[0, 0.85], [0.25, 0.62], [1, 0.12]]}}, "ok": true, "result": "ok."}
+{"step": 27, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 28, "tool": "edit_part", "args": {"id": "lamp", "params": {"r": [0.34, 0.38, 0.34]}}, "ok": true, "result": "ok."}
+{"step": 29, "tool": "render", "args": {"t": 0.5}, "ok": true, "result": "Rendered. 33704 splats (limit 250000), extent [-7.34,-0.06,-7.43]..[7.83,6.37,7."}
+{"step": 30, "tool": "set_light", "args": {"amb": 0.45, "sky": 0.5, "sun": [-0.6, 0.7, 0.4]}, "ok": true, "result": "ok."}
+{"step": 31, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 32, "tool": "set_light", "args": {"amb": 0.35, "sky": 0.4, "sun": [0.7, 0.8, 0.5]}, "ok": true, "result": "ok."}
+{"step": 33, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 34, "tool": "set_light", "args": {"amb": 0.35, "sky": 0.45, "sun": [-0.5, 0.6, -0.6]}, "ok": true, "result": "ok."}
+{"step": 35, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 36, "tool": "finish", "args": {"summary": "A small red lighthouse with a pale banded tower, gallery deck and metal cap stands on a rocky island surrounded by teal sea; a glowing lamp with a metal shade spins slowly at the top.", "title": "Lighthouse on the Rocks"}, "ok": true, "result": "Finished and delivered: Lighthouse on the Rocks: A small red lighthouse with a p"}

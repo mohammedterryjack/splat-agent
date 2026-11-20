@@ -1,0 +1,34 @@
+{"step": 1, "tool": "catalog", "args": {"query": "kinds"}, "ok": true, "result": "ground: a round patch of ground (rad = radius, default 8). Put it first.\n  needs"}
+{"step": 2, "tool": "catalog", "args": {"query": "materials"}, "ok": true, "result": "roles: stone, dark, pale, earth, wood, moss, leaf, water, metal, bone, ember, gl"}
+{"step": 3, "tool": "set_style", "args": {"style": "slate", "roles": {"accent": [38, 39, 40, 41]}}, "ok": false, "result": "refused (set_style); the scene is unchanged. Fix and try again:\nERROR at roles.a"}
+{"step": 4, "tool": "catalog", "args": {"query": "styles"}, "ok": true, "result": "slate: 30 colours; roles stone=[1,2,3,4,5] dark=[1,1,2,3] pale=[3,4,5,6] earth=["}
+{"step": 5, "tool": "catalog", "args": {"query": "palette"}, "ok": true, "result": "\nAlso see catalog sections: materials"}
+{"step": 6, "tool": "set_style", "args": {"roles": {"accent": [9, 10, 11, 12]}, "style": "slate"}, "ok": true, "result": "ok."}
+{"step": 7, "tool": "add_solid", "args": {"kind": "ground", "params": {"rad": 8}, "mat": "pale", "id": "snow-ground"}, "ok": true, "result": "ok: snow-ground."}
+{"step": 8, "tool": "add_solid", "args": {"mat": "pale", "kind": "ball", "params": {"at": [0, 0.8, 0], "r": [1, 0.95, 1]}, "id": "body-low"}, "ok": true, "result": "ok: body-low."}
+{"step": 9, "tool": "add_solid", "args": {"mat": "pale", "kind": "ball", "params": {"at": [0, 2.1, 0], "r": 0.72}, "id": "body-mid"}, "ok": true, "result": "ok: body-mid."}
+{"step": 10, "tool": "add_solid", "args": {"mat": "pale", "kind": "ball", "params": {"at": [0, 3.15, 0], "r": 0.5}, "id": "head"}, "ok": true, "result": "ok: head."}
+{"step": 11, "tool": "add_solid", "args": {"mat": "accent", "kind": "torus", "params": {"at": [0, 2.72, 0], "R": 0.48, "r": 0.13}, "id": "scarf-collar"}, "ok": true, "result": "ok: scarf-collar."}
+{"step": 12, "tool": "add_solid", "args": {"mat": "accent", "kind": "box", "params": {"at": [0.15, 2.25, 0.45], "half": [0.16, 0.5, 0.09], "turn": [0, 0.35, 0.15]}, "id": "scarf-tail"}, "ok": true, "result": "ok: scarf-tail."}
+{"step": 13, "tool": "add_solid", "args": {"kind": "tube", "mat": "wood", "params": {"pts": [[0.6, 2.35, 0.25], [1.35, 2.9, 0.55], [1.85, 3.55, 0.75]], "r": [0.09, 0.05]}, "id": "arm-r"}, "ok": true, "result": "ok: arm-r."}
+{"step": 14, "tool": "add_solid", "args": {"kind": "tube", "mat": "wood", "params": {"pts": [[-0.6, 2.3, 0.25], [-1.35, 2.75, 0.6], [-1.8, 3.4, 0.85]], "r": [0.09, 0.05]}, "id": "arm-l"}, "ok": true, "result": "ok: arm-l."}
+{"step": 15, "tool": "add_solid", "args": {"kind": "ball", "mat": "dark", "params": {"at": [0.14, 3.28, 0.42], "r": 0.07}, "id": "eye-r"}, "ok": true, "result": "ok: eye-r."}
+{"step": 16, "tool": "add_solid", "args": {"kind": "ball", "mat": "dark", "params": {"at": [-0.14, 3.28, 0.42], "r": 0.07}, "id": "eye-l"}, "ok": true, "result": "ok: eye-l."}
+{"step": 17, "tool": "add_solid", "args": {"kind": "cone", "mat": "ember", "params": {"pts": [[0, 3.12, 0.52], [0, 3.08, 0.95]], "r": [0.08, 0]}, "id": "nose"}, "ok": false, "result": "refused (add_solid nose); the scene is unchanged. Fix and try again:\nERROR at so"}
+{"step": 18, "tool": "add_solid", "args": {"mat": "ember", "kind": "lathe", "params": {"h": 0.4, "r": [[0, 0.09], [1, 0.005]], "at": [0, 3.08, 0.55], "turn": [1.57, 0, 0]}, "id": "nose"}, "ok": true, "result": "ok: nose."}
+{"step": 19, "tool": "add_solid", "args": {"mat": "dark", "kind": "ball", "params": {"at": [0, 2.35, 0.68], "r": 0.07}, "id": "button1"}, "ok": true, "result": "ok: button1."}
+{"step": 20, "tool": "add_solid", "args": {"mat": "dark", "kind": "ball", "params": {"at": [0, 1.95, 0.7], "r": 0.07}, "id": "button2"}, "ok": true, "result": "ok: button2."}
+{"step": 21, "tool": "add_solid", "args": {"mat": "dark", "kind": "ball", "params": {"at": [0, 1.55, 0.72], "r": 0.07}, "id": "button3"}, "ok": true, "result": "ok: button3."}
+{"step": 22, "tool": "add_solid", "args": {"kind": "extrude", "mat": {"glow": true, "role": "glow"}, "params": {"outline": {"inner": 0.22, "r": 0.45, "star": 5}, "at": [0, 4.3, 0], "depth": 0.12, "turn": [1.57, 0, 0]}, "id": "star"}, "ok": true, "result": "ok: star."}
+{"step": 23, "tool": "add_motion", "args": {"do": "spin", "part": "star", "params": {"axis": [0, 1, 0], "speed": 1.5}}, "ok": false, "result": "no solid is marked as part \"star\"; give a solid \"part\" with add_solid or edit_pa"}
+{"step": 24, "tool": "edit_part", "args": {"id": "star", "params": {"part": "star"}}, "ok": true, "result": "ok."}
+{"step": 25, "tool": "add_motion", "args": {"do": "spin", "part": "star", "params": {"axis": [0, 1, 0], "speed": 1.5}}, "ok": true, "result": "ok."}
+{"step": 26, "tool": "render", "args": {"pitch": -0.15}, "ok": true, "result": "Rendered. 24185 splats (limit 250000), extent [-6.51,-0.03,-6.59]..[6.99,4.7,6.4"}
+{"step": 27, "tool": "set_material", "args": {"id": "scarf-collar", "mat": {"ramp": [15, 16, 17, 18], "role": "accent"}}, "ok": true, "result": "ok."}
+{"step": 28, "tool": "set_material", "args": {"id": "scarf-tail", "mat": {"ramp": [15, 16, 17, 18], "role": "accent"}}, "ok": true, "result": "ok."}
+{"step": 29, "tool": "render", "args": {"pitch": -0.15}, "ok": true, "result": "Rendered. 24185 splats (limit 250000), extent [-6.51,-0.03,-6.59]..[6.99,4.7,6.4"}
+{"step": 30, "tool": "set_camera", "args": {"dist": 8, "pitch": 0.22, "target": [0, 2.1, 0], "yaw": 0.4}, "ok": true, "result": "ok."}
+{"step": 31, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 32, "tool": "edit_part", "args": {"id": "scarf-tail", "params": {"at": [0.15, 2.1, 0.36], "half": [0.16, 0.55, 0.08]}}, "ok": true, "result": "ok."}
+{"step": 33, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 34, "tool": "finish", "args": {"title": "Snowman with a Spinning Star", "summary": "A cheerful three-ball snowman on a snowy patch, wearing a red scarf with a dangling tail, twig arms, coal eyes and buttons, and a carrot nose, with a glowing five-pointed star spinning above his head."}, "ok": true, "result": "Finished and delivered: Snowman with a Spinning Star: A cheerful three-ball snow"}

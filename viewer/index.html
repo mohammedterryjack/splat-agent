@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Splat viewer</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #07080b; color: #cfd2c8; font: 14px system-ui, sans-serif; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; image-rendering: pixelated; touch-action: none; cursor: grab; }
+  #bar { position: fixed; left: 10px; top: 8px; display: flex; gap: 10px; align-items: center; background: #0008; padding: 6px 10px; border-radius: 6px; }
+  button { background: #2a2e36; color: #cfd2c8; border: 0; padding: 4px 10px; border-radius: 4px; cursor: pointer; }
+  #msg { opacity: .8; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="bar"><b id="title">Loading...</b><button id="play">Play</button><button id="reset">Reset view</button><span id="msg">building the scene...</span></div>
+<script src="/viewer/ink.js"></script>
+<script>
+"use strict";
+const { KIT, R } = window.INK;
+const cv = document.getElementById("c"), cx = cv.getContext("2d"), msg = document.getElementById("msg");
+let world = null, yaw = 0, pitch = 0, zoom = 1, t = 0, playing = false, dirty = true, last = 0, clock = 0;
+function pose(w, time) {
+  if (!w.anim) return;
+  if (w.anim.stateful) {
+    if (time < clock) time = clock;
+    while (clock < time - 1e-9) { const dt = Math.min(1 / 60, time - clock); clock += dt; w.anim.update(dt, clock); }
+  } else w.anim.update(1 / 60, time);
+  if (w.anim.bones) {
+    if (!w.rest) w.rest = w.data;
+    w.data = KIT.bones.posed({ data: w.rest, anim: w.anim, get posedBuf() { return w.posedBuf; }, set posedBuf(v) { w.posedBuf = v; } });
+  }
+}
+function draw() {
+  if (!world) return;
+  const W = Math.min(innerWidth, 1280), H = Math.round(W * innerHeight / innerWidth);
+  pose(world, t);
+  const im = R.render(world, { t, yaw, pitch, zoom, w: W, h: H });
+  if (cv.width !== im.w || cv.height !== im.h) { cv.width = im.w; cv.height = im.h; }
+  const id = cx.createImageData(im.w, im.h);
+  for (let i = 0, j = 0; i < im.w * im.h; i++, j += 3) { id.data[i * 4] = im.rgb[j]; id.data[i * 4 + 1] = im.rgb[j + 1]; id.data[i * 4 + 2] = im.rgb[j + 2]; id.data[i * 4 + 3] = 255; }
+  cx.putImageData(id, 0, 0);
+}
+function frame(now) {
+  if (playing) { t += Math.min(0.1, (now - last) / 1000); dirty = true; }
+  last = now;
+  if (dirty) { dirty = false; draw(); }
+  requestAnimationFrame(frame);
+}
+let drag = null;
+cv.addEventListener("pointerdown", e => { drag = { x: e.clientX, y: e.clientY, yaw, pitch }; cv.setPointerCapture(e.pointerId); cv.style.cursor = "grabbing"; });
+cv.addEventListener("pointermove", e => {
+  if (!drag) return;
+  yaw = drag.yaw - (e.clientX - drag.x) * 0.008;
+  pitch = Math.max(-0.2, Math.min(1.3, drag.pitch + (e.clientY - drag.y) * 0.006));
+  dirty = true;
+});
+addEventListener("pointerup", () => { drag = null; cv.style.cursor = "grab"; });
+cv.addEventListener("wheel", e => { e.preventDefault(); zoom = Math.max(0.4, Math.min(4, zoom * (e.deltaY < 0 ? 1.1 : 1 / 1.1))); dirty = true; }, { passive: false });
+addEventListener("resize", () => (dirty = true));
+document.getElementById("play").onclick = e => { playing = !playing; e.target.textContent = playing ? "Pause" : "Play"; };
+document.getElementById("reset").onclick = () => { yaw = world.cam.yaw; pitch = world.cam.pitch; zoom = 1; dirty = true; };
+// mesh solids (asset library): scene.json names each placement "<kit>/<model>#<id>"; the model is /viewer/assets/<kit>/<model>.glb
+function meshEnv(spec) {
+  const keys = [], visit = s => { if (!s || typeof s !== "object") return; if (s.kind === "mesh" && typeof s.asset === "string") keys.push(s.asset); for (const k of ["a", "b", "of"]) visit(s[k]); };
+  (spec.solids || []).forEach(visit);
+  return Promise.all(keys.map(k => fetch("/viewer/assets/" + k.split("#")[0] + ".glb").then(r => { if (!r.ok) throw new Error("asset " + k + " " + r.status); return r.arrayBuffer(); })
+    .then(b => [k, KIT.mesh.glb(new Uint8Array(b))]))).then(list => ({ assets: Object.fromEntries(list) }));
+}
+fetch("scene.json", { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("scene " + r.status); return r.json(); }).then(spec => meshEnv(spec).then(env => [spec, env])).then(([spec, env]) => {
+  document.getElementById("title").textContent = spec.name || spec.id;
+  document.title = (spec.name || spec.id) + " - splat viewer";
+  setTimeout(() => {
+    const t0 = performance.now();
+    world = KIT.diorama.build(spec, env);
+    if (world.anim && world.anim.stateful) world.anim.update(0, 0);
+    yaw = world.cam.yaw; pitch = world.cam.pitch;
+    msg.textContent = world.count.toLocaleString() + " splats, built in " + ((performance.now() - t0) / 1000).toFixed(1) + " s. Drag to orbit, scroll to zoom.";
+    requestAnimationFrame(frame);
+  }, 30);
+}).catch(e => { msg.textContent = "could not load the scene: " + e.message; });
+</script>
+</body>
+</html>

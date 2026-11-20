@@ -1,0 +1,202 @@
+{"step": 1, "tool": "catalog", "args": {"query": "kinds"}, "ok": true, "result": "ground: a round patch of ground (rad = radius, default 8). Put it first.\n  needs"}
+{"step": 2, "tool": "catalog", "args": {"query": "extrude"}, "ok": true, "result": "extrude: a 2D outline pushed out: outline ({\"ngon\": 6, \"r\": 1}, {\"star\": 5, \"r\":"}
+{"step": 3, "tool": "set_style", "args": {"style": "ember"}, "ok": true, "result": "ok."}
+{"step": 4, "tool": "add_solid", "args": {"id": "ground", "kind": "ground", "mat": "earth", "params": {"rad": 9}}, "ok": true, "result": "ok: ground."}
+{"step": 5, "tool": "add_solid", "args": {"id": "house-body", "kind": "box", "mat": {"noise": 0.25, "role": "bone"}, "params": {"at": [0, 2.1, 0], "half": [3, 2.1, 2.2]}}, "ok": true, "result": "ok: house-body."}
+{"step": 6, "tool": "add_solid", "args": {"id": "house-roof", "kind": "extrude", "mat": "dark", "params": {"at": [0, 0, -2.4], "depth": 4.8, "outline": {"svg": "M-3.4 0 L3.4 0 L0 2.1 Z"}}}, "ok": true, "result": "ok: house-roof."}
+{"step": 7, "tool": "add_solid", "args": {"id": "win-carve", "kind": "box", "mat": "dark", "params": {"at": [1.6, 2.2, 2.205], "half": [0.6, 0.8, 0.06]}}, "ok": true, "result": "ok: win-carve."}
+{"step": 8, "tool": "join", "args": {"a": "house-body", "b": "win-carve", "how": "cut", "id": "house"}, "ok": true, "result": "ok: house."}
+{"step": 9, "tool": "add_solid", "args": {"id": "win-glow", "kind": "box", "mat": "glow", "params": {"at": [1.6, 2.2, 2.16], "half": [0.56, 0.76, 0.02]}}, "ok": true, "result": "ok: win-glow."}
+{"step": 10, "tool": "set_material", "args": {"id": "win-glow", "mat": {"glow": true, "noise": 0.1, "role": "ember"}}, "ok": true, "result": "ok."}
+{"step": 11, "tool": "add_solid", "args": {"id": "frame-a", "kind": "box", "mat": "dark", "params": {"at": [1.6, 2.2, 2.23], "half": [0.65, 0.85, 0.03]}}, "ok": true, "result": "ok: frame-a."}
+{"step": 12, "tool": "add_solid", "args": {"id": "frame-b", "kind": "box", "mat": "ember", "params": {"at": [1.6, 2.2, 2.19], "half": [0.52, 0.72, 0.015]}}, "ok": true, "result": "ok: frame-b."}
+{"step": 13, "tool": "join", "args": {"a": "frame-a", "b": "frame-b", "how": "cut", "id": "win-frame"}, "ok": true, "result": "ok: win-frame."}
+{"step": 14, "tool": "add_solid", "args": {"id": "win-bar-v", "kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.22], "half": [0.03, 0.72, 0.02]}}, "ok": true, "result": "ok: win-bar-v."}
+{"step": 15, "tool": "add_solid", "args": {"id": "win-bar-h", "kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.22], "half": [0.52, 0.03, 0.02]}}, "ok": true, "result": "ok: win-bar-h."}
+{"step": 16, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.3, 1, 2.21], "half": [0.5, 1, 0.04]}, "part": "door"}, "ok": true, "result": "ok: box."}
+{"step": 17, "tool": "add_solid", "args": {"kind": "ball", "mat": "pale", "params": {"at": [0.92, 2.45, 2.55], "r": 0.14}, "part": "jumper"}, "ok": true, "result": "ok: ball."}
+{"step": 18, "tool": "add_solid", "args": {"kind": "box", "mat": "bone", "params": {"at": [0.92, 2.14, 2.5], "half": [0.14, 0.21, 0.1], "round": 0.05}, "part": "jumper"}, "ok": true, "result": "ok: box-2."}
+{"step": 19, "tool": "add_solid", "args": {"kind": "tube", "mat": "bone", "params": {"pts": [[0.92, 2.28, 2.5], [0.72, 2.55, 2.75]], "r": 0.045}, "part": "jumper"}, "ok": true, "result": "ok: tube."}
+{"step": 20, "tool": "add_solid", "args": {"kind": "tube", "mat": "bone", "params": {"pts": [[0.92, 2.28, 2.5], [1.14, 2.52, 2.8]], "r": 0.045}, "part": "jumper"}, "ok": true, "result": "ok: tube-2."}
+{"step": 21, "tool": "add_solid", "args": {"kind": "tube", "mat": "bone", "params": {"pts": [[0.92, 1.95, 2.5], [0.8, 1.62, 2.75], [0.85, 1.3, 2.6]], "r": 0.055}, "part": "jumper"}, "ok": true, "result": "ok: tube-3."}
+{"step": 22, "tool": "add_solid", "args": {"kind": "tube", "mat": "bone", "params": {"pts": [[0.92, 1.95, 2.5], [1.1, 1.6, 2.85], [1.2, 1.3, 2.7]], "r": 0.055}, "part": "jumper"}, "ok": true, "result": "ok: tube-4."}
+{"step": 23, "tool": "add_solid", "args": {"kind": "box", "mat": "bone", "params": {"at": [0.92, 2.72, 2.55], "half": [0.16, 0.03, 0.12]}, "part": "jumper"}, "ok": true, "result": "ok: box-3."}
+{"step": 24, "tool": "add_solid", "args": {"kind": "box", "mat": "bone", "params": {"at": [0.92, 2.76, 2.67], "half": [0.16, 0.09, 0.03]}, "part": "jumper"}, "ok": true, "result": "ok: box-4."}
+{"step": 25, "tool": "add_motion", "args": {"do": "bob", "params": {"amount": 0.06, "axis": [0, 1, 0], "period": 1.2}, "part": "jumper"}, "ok": true, "result": "ok."}
+{"step": 26, "tool": "add_solid", "args": {"kind": "stairs", "mat": "stone", "params": {"at": [0.3, 0, 2.2], "dir": [0, 0, 1], "rise": 0.5, "riser": 0.17, "tread": 0.28, "width": 1.2}}, "ok": true, "result": "ok: stairs."}
+{"step": 27, "tool": "add_solid", "args": {"kind": "tube", "mat": "wood", "params": {"pts": [[-3.6, 0, 1.6], [-3.7, 1.4, 1.5], [-3.5, 2.6, 1.7], [-3.6, 3.4, 1.4]], "r": [0.22, 0.06]}}, "ok": true, "result": "ok: tube-5."}
+{"step": 28, "tool": "add_solid", "args": {"kind": "tube", "mat": "wood", "params": {"pts": [[-3.62, 2.1, 1.6], [-4.3, 2.7, 1.3], [-4.7, 3.2, 1.2]], "r": [0.07, 0.02]}}, "ok": true, "result": "ok: tube-6."}
+{"step": 29, "tool": "add_solid", "args": {"kind": "tube", "mat": "wood", "params": {"pts": [[-3.55, 2.8, 1.6], [-2.9, 3.3, 1.9], [-2.6, 3.8, 1.8]], "r": [0.06, 0.02]}}, "ok": true, "result": "ok: tube-7."}
+{"step": 30, "tool": "add_solid", "args": {"kind": "box", "mat": {"noise": 0.3, "role": "stone"}, "params": {"at": [3.6, 0.35, 2.6], "half": [0.25, 0.35, 0.08], "round": 0.18}}, "ok": true, "result": "ok: box-5."}
+{"step": 31, "tool": "add_solid", "args": {"kind": "box", "mat": {"noise": 0.3, "role": "stone"}, "params": {"at": [4.3, 0.3, 1.6], "half": [0.22, 0.3, 0.07], "round": 0.16, "turn": [0.4, 0.15, 0.2]}}, "ok": true, "result": "ok: box-6."}
+{"step": 32, "tool": "add_solid", "args": {"kind": "box", "mat": {"noise": 0.3, "role": "stone"}, "params": {"at": [-1.8, 0.28, 3.9], "half": [0.2, 0.28, 0.07], "round": 0.15, "turn": [0.2, -0.18, 0.1]}}, "ok": true, "result": "ok: box-7."}
+{"step": 33, "tool": "add_solid", "args": {"kind": "fence", "mat": "wood", "params": {"a": [-6.5, 0, 4.5], "b": [6.5, 0, 4.5], "h": 0.9, "pickets": 14}}, "ok": true, "result": "ok: fence."}
+{"step": 34, "tool": "add_solid", "args": {"kind": "rock", "mat": "earth", "params": {"at": [2.2, 0.15, 3.6], "r": 0.35}}, "ok": true, "result": "ok: rock."}
+{"step": 35, "tool": "add_solid", "args": {"kind": "rock", "mat": "earth", "params": {"at": [-2.6, 0.12, -2.8], "r": 0.5}}, "ok": true, "result": "ok: rock-2."}
+{"step": 36, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [-1.5, 2.2, 2.22], "half": [0.35, 0.45, 0.02]}}, "ok": true, "result": "ok: box-8."}
+{"step": 37, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [-1.5, 2.2, 2.24], "half": [0.38, 0.48, 0.01]}}, "ok": true, "result": "ok: box-9."}
+{"step": 38, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [-1.5, 2.2, 2.25], "half": [0.3, 0.4, 0.01]}}, "ok": true, "result": "ok: box-10."}
+{"step": 39, "tool": "set_light", "args": {"amb": 0.22, "sky": 0.28, "sun": [-0.6, 0.7, 0.4]}, "ok": true, "result": "ok."}
+{"step": 40, "tool": "set_camera", "args": {"dist": 16, "pitch": 0.28, "target": [0.4, 2, 0.8], "yaw": 0.35}, "ok": true, "result": "ok."}
+{"step": 41, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 53124 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,4.2,7.2"}
+{"step": 42, "tool": "remove_part", "args": {"id": "win-glow"}, "ok": true, "result": "ok."}
+{"step": 43, "tool": "remove_part", "args": {"id": "win-frame"}, "ok": true, "result": "ok."}
+{"step": 44, "tool": "remove_part", "args": {"id": "win-bar-v"}, "ok": true, "result": "ok."}
+{"step": 45, "tool": "remove_part", "args": {"id": "win-bar-h"}, "ok": true, "result": "ok."}
+{"step": 46, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [1.6, 2.2, 2.205], "half": [0.6, 0.8, 0.06]}}, "ok": true, "result": "ok: box-11."}
+{"step": 47, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.205], "half": [0.6, 0.8, 0.06]}}, "ok": true, "result": "ok: box-12."}
+{"step": 48, "tool": "remove_part", "args": {"id": "box-11"}, "ok": true, "result": "ok."}
+{"step": 49, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.24], "half": [0.66, 0.86, 0.02]}}, "ok": true, "result": "ok: box-11."}
+{"step": 50, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [0.92, 2.2, 2.25], "half": [0.55, 0.75, 0.015]}}, "ok": true, "result": "ok: box-13."}
+{"step": 51, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.26], "half": [0.035, 0.75, 0.012]}}, "ok": true, "result": "ok: box-14."}
+{"step": 52, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.26], "half": [0.55, 0.035, 0.012]}}, "ok": true, "result": "ok: box-15."}
+{"step": 53, "tool": "remove_part", "args": {"id": "box-12"}, "ok": true, "result": "ok."}
+{"step": 54, "tool": "move", "args": {"by": [0, 0, 0.15], "id": "box-11"}, "ok": true, "result": "ok."}
+{"step": 55, "tool": "remove_part", "args": {"id": "box-8"}, "ok": true, "result": "ok."}
+{"step": 56, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 57, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 58, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [-1.5, 2.2, 2.23], "half": [0.42, 0.52, 0.05]}}, "ok": true, "result": "ok: box-8."}
+{"step": 59, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 52456 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,4.2,7.2"}
+{"step": 60, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.22], "half": [0.6, 0.8, 0.05]}}, "ok": true, "result": "ok: box-9."}
+{"step": 61, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [1.6, 2.2, 2.22], "half": [0.6, 0.8, 0.05]}}, "ok": true, "result": "ok: box-10."}
+{"step": 62, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 53516 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,4.2,7.2"}
+{"step": 63, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [1.6, 2.2, 2.205], "half": [0.6, 0.8, 0.06]}}, "ok": true, "result": "ok: box-12."}
+{"step": 64, "tool": "join", "args": {"a": "house", "b": "box-12", "how": "cut"}, "ok": true, "result": "ok: house."}
+{"step": 65, "tool": "remove_part", "args": {"id": "box-12"}, "ok": false, "result": "no solid with id \"box-12\" (did you mean \"box-2\"?)"}
+{"step": 66, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 67, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [1.6, 2.2, 2.23], "half": [0.66, 0.86, 0.02]}}, "ok": true, "result": "ok: box-10."}
+{"step": 68, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [1.6, 2.2, 2.24], "half": [0.55, 0.75, 0.015]}}, "ok": true, "result": "ok: box-12."}
+{"step": 69, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [1.6, 2.2, 2.25], "half": [0.035, 0.75, 0.012]}}, "ok": true, "result": "ok: box-16."}
+{"step": 70, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [1.6, 2.2, 2.25], "half": [0.55, 0.035, 0.012]}}, "ok": true, "result": "ok: box-17."}
+{"step": 71, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 54736 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,4.2,7.2"}
+{"step": 72, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 73, "tool": "remove_part", "args": {"id": "box-11"}, "ok": true, "result": "ok."}
+{"step": 74, "tool": "remove_part", "args": {"id": "box-13"}, "ok": true, "result": "ok."}
+{"step": 75, "tool": "remove_part", "args": {"id": "box-14"}, "ok": true, "result": "ok."}
+{"step": 76, "tool": "remove_part", "args": {"id": "box-15"}, "ok": true, "result": "ok."}
+{"step": 77, "tool": "remove_part", "args": {"id": "box-8"}, "ok": true, "result": "ok."}
+{"step": 78, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 79, "tool": "remove_part", "args": {"id": "box-12"}, "ok": true, "result": "ok."}
+{"step": 80, "tool": "remove_part", "args": {"id": "box-16"}, "ok": true, "result": "ok."}
+{"step": 81, "tool": "remove_part", "args": {"id": "box-17"}, "ok": true, "result": "ok."}
+{"step": 82, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.205], "half": [0.6, 0.8, 0.06]}}, "ok": true, "result": "ok: box-8."}
+{"step": 83, "tool": "join", "args": {"a": "house", "b": "box-8", "how": "cut"}, "ok": true, "result": "ok: house."}
+{"step": 84, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.2], "half": [0.6, 0.8, 0.06]}}, "ok": true, "result": "ok: box-8."}
+{"step": 85, "tool": "join", "args": {"a": "house", "b": "box-8", "how": "cut"}, "ok": true, "result": "ok: house."}
+{"step": 86, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [0.92, 2.2, 2.1], "half": [0.55, 0.75, 0.05]}}, "ok": true, "result": "ok: box-8."}
+{"step": 87, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 52788 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,4.2,7.2"}
+{"step": 88, "tool": "render", "args": {"yaw": 0.35}, "ok": true, "result": "Rendered. 52788 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,4.2,7.2"}
+{"step": 89, "tool": "stats", "args": {}, "ok": true, "result": "52788 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,4.2,7.21], camera"}
+{"step": 90, "tool": "validate", "args": {}, "ok": true, "result": "no problems\nstyle ember; camera {\"target\":[0.4,2,0.8],\"dist\":16,\"pitch\":0.28,\"ya"}
+{"step": 91, "tool": "set_style", "args": {"style": "slate"}, "ok": true, "result": "ok."}
+{"step": 92, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.22], "half": [0.66, 0.86, 0.02]}}, "ok": true, "result": "ok: box-9."}
+{"step": 93, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [0.92, 2.2, 2.225], "half": [0.58, 0.78, 0.012]}}, "ok": true, "result": "ok: box-10."}
+{"step": 94, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.235], "half": [0.03, 0.78, 0.01]}}, "ok": true, "result": "ok: box-11."}
+{"step": 95, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.235], "half": [0.58, 0.03, 0.01]}}, "ok": true, "result": "ok: box-12."}
+{"step": 96, "tool": "add_solid", "args": {"kind": "ball", "mat": {"glow": true, "role": "glow"}, "params": {"at": [-5.5, 6.5, -6], "r": 1.1}}, "ok": true, "result": "ok: ball-2."}
+{"step": 97, "tool": "set_style", "args": {"style": "ember"}, "ok": true, "result": "ok."}
+{"step": 98, "tool": "set_light", "args": {"amb": 0.18, "sky": 0.2, "sun": [-0.6, 0.7, 0.4]}, "ok": true, "result": "ok."}
+{"step": 99, "tool": "set_style", "args": {"style": "slate"}, "ok": true, "result": "ok."}
+{"step": 100, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 56493 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 101, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [-1.5, 2.2, 2.205], "half": [0.42, 0.52, 0.06]}}, "ok": true, "result": "ok: box-13."}
+{"step": 102, "tool": "join", "args": {"a": "house", "b": "box-13", "how": "cut"}, "ok": true, "result": "ok: house."}
+{"step": 103, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [-1.5, 2.2, 2.12], "half": [0.4, 0.5, 0.04]}}, "ok": true, "result": "ok: box-13."}
+{"step": 104, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [-1.5, 2.2, 2.22], "half": [0.47, 0.57, 0.015]}}, "ok": true, "result": "ok: box-14."}
+{"step": 105, "tool": "join", "args": {"a": "box-14", "b": "box-13", "how": "common", "id": "win2-glow"}, "ok": true, "result": "ok: win2-glow."}
+{"step": 106, "tool": "set_material", "args": {"id": "win2-glow", "mat": {"glow": true, "role": "ember"}}, "ok": true, "result": "ok."}
+{"step": 107, "tool": "remove_part", "args": {"id": "box-13"}, "ok": false, "result": "no solid with id \"box-13\" (did you mean \"box-3\"?)"}
+{"step": 108, "tool": "remove_part", "args": {"id": "win2-glow"}, "ok": true, "result": "ok."}
+{"step": 109, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [-1.5, 2.2, 2.19], "half": [0.4, 0.5, 0.01]}}, "ok": true, "result": "ok: box-13."}
+{"step": 110, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 111, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 112, "tool": "remove_part", "args": {"id": "box-11"}, "ok": true, "result": "ok."}
+{"step": 113, "tool": "remove_part", "args": {"id": "box-12"}, "ok": true, "result": "ok."}
+{"step": 114, "tool": "remove_part", "args": {"id": "box-13"}, "ok": true, "result": "ok."}
+{"step": 115, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.19], "half": [0.56, 0.76, 0.012]}}, "ok": true, "result": "ok: box-9."}
+{"step": 116, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.2], "half": [0.63, 0.83, 0.01]}}, "ok": true, "result": "ok: box-10."}
+{"step": 117, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.205], "half": [0.6, 0.8, 0.06]}}, "ok": true, "result": "ok: box-11."}
+{"step": 118, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 119, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 120, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [0.92, 2.2, 2.16], "half": [0.5, 0.7, 0.01]}}, "ok": true, "result": "ok: box-9."}
+{"step": 121, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 122, "tool": "validate", "args": {}, "ok": true, "result": "no problems\nstyle slate; camera {\"target\":[0.4,2,0.8],\"dist\":16,\"pitch\":0.28,\"ya"}
+{"step": 123, "tool": "remove_part", "args": {"id": "box-11"}, "ok": true, "result": "ok."}
+{"step": 124, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 125, "tool": "remove_part", "args": {"id": "box-8"}, "ok": true, "result": "ok."}
+{"step": 126, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [0.92, 2.2, 2.1], "half": [0.55, 0.75, 0.05]}}, "ok": true, "result": "ok: box-8."}
+{"step": 127, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.98, 2.2], "half": [0.6, 0.05, 0.03]}}, "ok": true, "result": "ok: box-9."}
+{"step": 128, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 1.42, 2.2], "half": [0.6, 0.05, 0.03]}}, "ok": true, "result": "ok: box-10."}
+{"step": 129, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.26, 2.2, 2.2], "half": [0.05, 0.8, 0.03]}}, "ok": true, "result": "ok: box-11."}
+{"step": 130, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [1.58, 2.2, 2.2], "half": [0.05, 0.8, 0.03]}}, "ok": true, "result": "ok: box-12."}
+{"step": 131, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [-1.5, 2.2, 2.14], "half": [0.37, 0.47, 0.02]}}, "ok": true, "result": "ok: box-13."}
+{"step": 132, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [-1.5, 2.2, 2.17], "half": [0.46, 0.56, 0.012]}}, "ok": true, "result": "ok: box-14."}
+{"step": 133, "tool": "join", "args": {"a": "box-14", "b": "box-13", "how": "cut", "id": "win2-frame"}, "ok": true, "result": "ok: win2-frame."}
+{"step": 134, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 56247 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 135, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 136, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 137, "tool": "remove_part", "args": {"id": "box-11"}, "ok": true, "result": "ok."}
+{"step": 138, "tool": "remove_part", "args": {"id": "box-12"}, "ok": true, "result": "ok."}
+{"step": 139, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.21], "half": [0.72, 0.07, 0.05]}}, "ok": true, "result": "ok: box-9."}
+{"step": 140, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 141, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.24], "half": [0.68, 0.88, 0.02]}}, "ok": true, "result": "ok: box-9."}
+{"step": 142, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.26], "half": [0.55, 0.75, 0.02]}}, "ok": true, "result": "ok: box-10."}
+{"step": 143, "tool": "join", "args": {"a": "box-9", "b": "box-10", "how": "cut", "id": "win-frame"}, "ok": true, "result": "ok: win-frame."}
+{"step": 144, "tool": "set_material", "args": {"id": "win-frame", "mat": "wood"}, "ok": true, "result": "ok."}
+{"step": 145, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 146, "tool": "edit_part", "args": {"id": "box", "params": {"half": [0.5, 2.07, 0.04], "turn": [0, 0, 0]}}, "ok": true, "result": "ok."}
+{"step": 147, "tool": "edit_part", "args": {"id": "house-roof", "params": {"at": [0, 4.2, -2.4]}}, "ok": true, "result": "ok."}
+{"step": 148, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.275], "half": [0.04, 0.75, 0.012]}}, "ok": true, "result": "ok: box-9."}
+{"step": 149, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.275], "half": [0.55, 0.04, 0.012]}}, "ok": true, "result": "ok: box-10."}
+{"step": 150, "tool": "add_solid", "args": {"kind": "tube", "mat": "dark", "params": {"pts": [[1.9, 3.9, 2.05], [1.9, 4.9, 2.05], [1.7, 5.8, 2.1]], "r": [0.3, 0.18]}}, "ok": true, "result": "ok: tube-8."}
+{"step": 151, "tool": "add_solid", "args": {"kind": "ball", "mat": {"noise": 0.4, "role": "dark"}, "params": {"at": [1.7, 6, 2.1], "r": [0.5, 0.6, 0.5]}}, "ok": true, "result": "ok: ball-3."}
+{"step": 152, "tool": "render", "args": {}, "ok": true, "result": "Rendered. 60535 splats (limit 250000), extent [-7.34,-1.07,-7.43]..[7.83,7.6,7.2"}
+{"step": 153, "tool": "edit_part", "args": {"id": "box", "params": {"at": [0.3, 1, 2.21], "half": [0.5, 1, 0.04]}}, "ok": true, "result": "ok."}
+{"step": 154, "tool": "remove_part", "args": {"id": "tube-8"}, "ok": true, "result": "ok."}
+{"step": 155, "tool": "remove_part", "args": {"id": "ball-3"}, "ok": true, "result": "ok."}
+{"step": 156, "tool": "edit_part", "args": {"id": "house-roof", "params": {"at": [0, 0, -2.4]}}, "ok": true, "result": "ok."}
+{"step": 157, "tool": "set_camera", "args": {"dist": 14, "pitch": 0.3, "target": [0.4, 2.2, 0.6], "yaw": 0.45}, "ok": true, "result": "ok."}
+{"step": 158, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 159, "tool": "add_solid", "args": {"kind": "extrude", "mat": {"glow": true, "noise": 0.3, "role": "glow"}, "params": {"at": [0, 0.005, 0], "depth": 0.01, "outline": {"svg": "M-3.9 0 L-3.9 -1.6 L-3.5 -1.6 L-3.5 -0.35 L3.5 -0.35 L3.5 -1.6 L3.9 -1.6 L3.9 0 L3.5 0 L3.5 -0.4 L2.0 -0.4 L2.0 2.4 L1.6 2.4 L1.6 2.8 L-1.6 2.8 L-1.6 2.4 L-2.0 2.4 L-2.0 -0.4 L-3.5 -0.4 L-3.5 0 Z"}}}, "ok": true, "result": "ok: extrude."}
+{"step": 160, "tool": "add_solid", "args": {"kind": "extrude", "mat": {"glow": true, "noise": 0.3, "role": "glow"}, "params": {"at": [0, 0.005, 0], "depth": 0.01, "outline": {"svg": "M-4.4 0 L-4.4 -1.6 L-4.0 -1.6 L-4.0 -0.35 L4.0 -0.35 L4.0 -1.6 L4.4 -1.6 L4.4 0 L4.0 0 L4.0 -0.4 L2.0 -0.4 L2.0 2.8 L1.6 2.8 L1.6 3.2 L-1.6 3.2 L-1.6 2.8 L-2.0 2.8 L-2.0 -0.4 L-4.0 -0.4 L-4.0 0 Z"}}}, "ok": true, "result": "ok: extrude-2."}
+{"step": 161, "tool": "remove_part", "args": {"id": "extrude"}, "ok": true, "result": "ok."}
+{"step": 162, "tool": "remove_part", "args": {"id": "extrude-2"}, "ok": true, "result": "ok."}
+{"step": 163, "tool": "render", "args": {"yaw": 0.45}, "ok": true, "result": "Rendered. 57247 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 164, "tool": "remove_part", "args": {"id": "box-13"}, "ok": false, "result": "no solid with id \"box-13\" (did you mean \"box-3\"?)"}
+{"step": 165, "tool": "remove_part", "args": {"id": "win-frame"}, "ok": true, "result": "ok."}
+{"step": 166, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 167, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 168, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.22], "half": [0.74, 0.94, 0.015]}}, "ok": true, "result": "ok: box-9."}
+{"step": 169, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 2.2, 2.24], "half": [0.55, 0.75, 0.03]}}, "ok": true, "result": "ok: box-10."}
+{"step": 170, "tool": "join", "args": {"a": "box-9", "b": "box-10", "how": "cut", "id": "win-frame"}, "ok": true, "result": "ok: win-frame."}
+{"step": 171, "tool": "set_material", "args": {"id": "win-frame", "mat": "wood"}, "ok": true, "result": "ok."}
+{"step": 172, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [-1.5, 2.2, 2.22], "half": [0.5, 0.6, 0.015]}}, "ok": true, "result": "ok: box-9."}
+{"step": 173, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [-1.5, 2.2, 2.24], "half": [0.38, 0.48, 0.03]}}, "ok": true, "result": "ok: box-10."}
+{"step": 174, "tool": "join", "args": {"a": "box-9", "b": "box-10", "how": "cut", "id": "win2-frame"}, "ok": false, "result": "a solid with id \"win2-frame\" already exists"}
+{"step": 175, "tool": "remove_part", "args": {"id": "win2-frame"}, "ok": true, "result": "ok."}
+{"step": 176, "tool": "join", "args": {"a": "box-9", "b": "box-10", "how": "cut", "id": "win2-frame"}, "ok": true, "result": "ok: win2-frame."}
+{"step": 177, "tool": "set_material", "args": {"id": "win2-frame", "mat": "wood"}, "ok": true, "result": "ok."}
+{"step": 178, "tool": "render", "args": {"yaw": 0.45}, "ok": true, "result": "Rendered. 57271 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 179, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [0.92, 2.2, 2.1], "half": [0.54, 0.74, 0.06]}}, "ok": true, "result": "ok: box-9."}
+{"step": 180, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [-1.5, 2.2, 2.12], "half": [0.36, 0.46, 0.04]}}, "ok": true, "result": "ok: box-10."}
+{"step": 181, "tool": "render", "args": {"yaw": 0.45}, "ok": true, "result": "Rendered. 57635 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 182, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 183, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 184, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [0.92, 2.2, 2.185], "half": [0.55, 0.75, 0.01]}}, "ok": true, "result": "ok: box-9."}
+{"step": 185, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [-1.5, 2.2, 2.195], "half": [0.37, 0.47, 0.01]}}, "ok": true, "result": "ok: box-10."}
+{"step": 186, "tool": "render", "args": {"yaw": 0.45}, "ok": true, "result": "Rendered. 57933 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 187, "tool": "remove_part", "args": {"id": "box-9"}, "ok": true, "result": "ok."}
+{"step": 188, "tool": "remove_part", "args": {"id": "box-10"}, "ok": true, "result": "ok."}
+{"step": 189, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [0.92, 2.2, 2.2], "half": [0.56, 0.76, 0.02]}}, "ok": true, "result": "ok: box-9."}
+{"step": 190, "tool": "add_solid", "args": {"kind": "box", "mat": {"glow": true, "role": "ember"}, "params": {"at": [-1.5, 2.2, 2.2], "half": [0.39, 0.49, 0.02]}}, "ok": true, "result": "ok: box-10."}
+{"step": 191, "tool": "render", "args": {"yaw": 0.45}, "ok": true, "result": "Rendered. 57975 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 192, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 193, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [2.18, 2.2, 2.2], "half": [0.16, 0.62, 0.06], "turn": [0, 0, 0.5]}}, "ok": true, "result": "ok: box-11."}
+{"step": 194, "tool": "render", "args": {"yaw": 0.45}, "ok": true, "result": "Rendered. 58123 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 195, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 0.9, 2.28], "half": [0.3, 0.5, 0.02], "turn": [0, 0, 0.5]}}, "ok": true, "result": "ok: box-12."}
+{"step": 196, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 197, "tool": "remove_part", "args": {"id": "box-12"}, "ok": true, "result": "ok."}
+{"step": 198, "tool": "add_solid", "args": {"kind": "box", "mat": "dark", "params": {"at": [0.92, 1.15, 2.31], "half": [0.26, 0.42, 0.015], "turn": [0.25, 0, 0.4]}}, "ok": true, "result": "ok: box-12."}
+{"step": 199, "tool": "render", "args": {"yaw": 0.45}, "ok": true, "result": "Rendered. 58261 splats (limit 250000), extent [-7.34,-0.04,-7.43]..[7.83,7.6,7.2"}
+{"step": 200, "tool": "finish", "args": {"summary": "A haunted house at night under a full moon \u2014 glowing amber windows, a creaking door, dead tree, broken fence and gravestones, while a pale figure leaps out of the upstairs window mid-air (bobbing in slow motion).", "title": "Jump Scare Manor"}, "ok": false, "result": "not finished: call turn after your last edit and check the four views first"}
+{"step": 201, "tool": "turn", "args": {}, "ok": true, "result": "Four views a quarter turn apart (labels give the yaw). Check each against the re"}
+{"step": 202, "tool": "finish", "args": {"summary": "A haunted house at night under a full moon \u2014 glowing amber windows, a creaking door, dead tree, broken fence and gravestones, while a pale figure leaps out of the upstairs window mid-air (bobbing in slow motion).", "title": "Jump Scare Manor"}, "ok": true, "result": "Finished. Reply to Mo with exactly these lines, unchanged, and nothing else:\nJum"}
